@@ -29,17 +29,20 @@
         private void InitializeComponent()
         {
             this.gbChicken = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.nudChickenAge = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbChickenGender = new System.Windows.Forms.ComboBox();
-            this.btnChickenFeed = new System.Windows.Forms.Button();
-            this.btnChickenSell = new System.Windows.Forms.Button();
-            this.btnChickenBuy = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pbChickenProduction = new System.Windows.Forms.ProgressBar();
+            this.chickenPrice = new System.Windows.Forms.Label();
+            this.lblChickenProductCount = new System.Windows.Forms.Label();
+            this.lblChickenTitle = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pbChickenProduction = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnChickenBuy = new System.Windows.Forms.Button();
+            this.btnChickenSell = new System.Windows.Forms.Button();
+            this.btnChickenFeed = new System.Windows.Forms.Button();
+            this.cbChickenGender = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudChickenAge = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
@@ -77,6 +80,7 @@
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblCash = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.lvStats = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -86,13 +90,9 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button13 = new System.Windows.Forms.Button();
-            this.lblChickenTitle = new System.Windows.Forms.Label();
-            this.lblChickenProductCount = new System.Windows.Forms.Label();
-            this.chickenPrice = new System.Windows.Forms.Label();
-            this.lblCash = new System.Windows.Forms.Label();
             this.gbChicken.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChickenAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -128,13 +128,114 @@
             this.gbChicken.TabStop = false;
             this.gbChicken.Text = "Tavuk";
             // 
-            // pictureBox1
+            // chickenPrice
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(44, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(154, 80);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.chickenPrice.AutoSize = true;
+            this.chickenPrice.Location = new System.Drawing.Point(147, 122);
+            this.chickenPrice.Name = "chickenPrice";
+            this.chickenPrice.Size = new System.Drawing.Size(28, 16);
+            this.chickenPrice.TabIndex = 12;
+            this.chickenPrice.Text = "20₺";
+            this.chickenPrice.Click += new System.EventHandler(this.chickenPrice_Click);
+            // 
+            // lblChickenProductCount
+            // 
+            this.lblChickenProductCount.AutoSize = true;
+            this.lblChickenProductCount.Location = new System.Drawing.Point(147, 303);
+            this.lblChickenProductCount.Name = "lblChickenProductCount";
+            this.lblChickenProductCount.Size = new System.Drawing.Size(0, 16);
+            this.lblChickenProductCount.TabIndex = 11;
+            // 
+            // lblChickenTitle
+            // 
+            this.lblChickenTitle.AutoSize = true;
+            this.lblChickenTitle.Location = new System.Drawing.Point(62, 122);
+            this.lblChickenTitle.Name = "lblChickenTitle";
+            this.lblChickenTitle.Size = new System.Drawing.Size(69, 16);
+            this.lblChickenTitle.TabIndex = 10;
+            this.lblChickenTitle.Text = "TAVUK 5₺";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 303);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 16);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Üretilen Ürün Sayısı:";
+            // 
+            // pbChickenProduction
+            // 
+            this.pbChickenProduction.Location = new System.Drawing.Point(9, 277);
+            this.pbChickenProduction.Name = "pbChickenProduction";
+            this.pbChickenProduction.Size = new System.Drawing.Size(205, 23);
+            this.pbChickenProduction.TabIndex = 8;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 258);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 16);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Ürün Süreci";
+            // 
+            // btnChickenBuy
+            // 
+            this.btnChickenBuy.Location = new System.Drawing.Point(44, 351);
+            this.btnChickenBuy.Name = "btnChickenBuy";
+            this.btnChickenBuy.Size = new System.Drawing.Size(154, 23);
+            this.btnChickenBuy.TabIndex = 7;
+            this.btnChickenBuy.Text = "Yeni Hayvan Satın Al";
+            this.btnChickenBuy.UseVisualStyleBackColor = true;
+            this.btnChickenBuy.Click += new System.EventHandler(this.btnChickenBuy_Click);
+            // 
+            // btnChickenSell
+            // 
+            this.btnChickenSell.Location = new System.Drawing.Point(44, 322);
+            this.btnChickenSell.Name = "btnChickenSell";
+            this.btnChickenSell.Size = new System.Drawing.Size(154, 23);
+            this.btnChickenSell.TabIndex = 6;
+            this.btnChickenSell.Text = "Ürünleri Sat";
+            this.btnChickenSell.UseVisualStyleBackColor = true;
+            this.btnChickenSell.Click += new System.EventHandler(this.btnChickenSell_Click);
+            // 
+            // btnChickenFeed
+            // 
+            this.btnChickenFeed.Location = new System.Drawing.Point(44, 232);
+            this.btnChickenFeed.Name = "btnChickenFeed";
+            this.btnChickenFeed.Size = new System.Drawing.Size(159, 23);
+            this.btnChickenFeed.TabIndex = 5;
+            this.btnChickenFeed.Text = "Besle";
+            this.btnChickenFeed.UseVisualStyleBackColor = true;
+            this.btnChickenFeed.Click += new System.EventHandler(this.btnChickenFeed_Click);
+            // 
+            // cbChickenGender
+            // 
+            this.cbChickenGender.FormattingEnabled = true;
+            this.cbChickenGender.Location = new System.Drawing.Point(74, 183);
+            this.cbChickenGender.Name = "cbChickenGender";
+            this.cbChickenGender.Size = new System.Drawing.Size(94, 24);
+            this.cbChickenGender.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Cinsiyet:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(25, 149);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Yaş:";
             // 
             // nudChickenAge
             // 
@@ -158,87 +259,13 @@
             0,
             0});
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 149);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Yaş:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Cinsiyet:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // cbChickenGender
-            // 
-            this.cbChickenGender.FormattingEnabled = true;
-            this.cbChickenGender.Location = new System.Drawing.Point(74, 183);
-            this.cbChickenGender.Name = "cbChickenGender";
-            this.cbChickenGender.Size = new System.Drawing.Size(94, 24);
-            this.cbChickenGender.TabIndex = 4;
-            // 
-            // btnChickenFeed
-            // 
-            this.btnChickenFeed.Location = new System.Drawing.Point(44, 232);
-            this.btnChickenFeed.Name = "btnChickenFeed";
-            this.btnChickenFeed.Size = new System.Drawing.Size(159, 23);
-            this.btnChickenFeed.TabIndex = 5;
-            this.btnChickenFeed.Text = "Besle";
-            this.btnChickenFeed.UseVisualStyleBackColor = true;
-            this.btnChickenFeed.Click += new System.EventHandler(this.btnChickenFeed_Click);
-            // 
-            // btnChickenSell
-            // 
-            this.btnChickenSell.Location = new System.Drawing.Point(44, 322);
-            this.btnChickenSell.Name = "btnChickenSell";
-            this.btnChickenSell.Size = new System.Drawing.Size(154, 23);
-            this.btnChickenSell.TabIndex = 6;
-            this.btnChickenSell.Text = "Ürünleri Sat";
-            this.btnChickenSell.UseVisualStyleBackColor = true;
-            this.btnChickenSell.Click += new System.EventHandler(this.btnChickenSell_Click);
-            // 
-            // btnChickenBuy
-            // 
-            this.btnChickenBuy.Location = new System.Drawing.Point(44, 351);
-            this.btnChickenBuy.Name = "btnChickenBuy";
-            this.btnChickenBuy.Size = new System.Drawing.Size(154, 23);
-            this.btnChickenBuy.TabIndex = 7;
-            this.btnChickenBuy.Text = "Yeni Hayvan Satın Al";
-            this.btnChickenBuy.UseVisualStyleBackColor = true;
-            this.btnChickenBuy.Click += new System.EventHandler(this.btnChickenBuy_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 258);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Ürün Süreci";
-            // 
-            // pbChickenProduction
-            // 
-            this.pbChickenProduction.Location = new System.Drawing.Point(9, 277);
-            this.pbChickenProduction.Name = "pbChickenProduction";
-            this.pbChickenProduction.Size = new System.Drawing.Size(205, 23);
-            this.pbChickenProduction.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 303);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Üretilen Ürün Sayısı:";
+            this.pictureBox1.Location = new System.Drawing.Point(44, 39);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(154, 80);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
@@ -592,6 +619,16 @@
             this.groupBox5.Text = "KASA";
             this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
+            // lblCash
+            // 
+            this.lblCash.AutoSize = true;
+            this.lblCash.Font = new System.Drawing.Font("Trebuchet MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblCash.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblCash.Location = new System.Drawing.Point(150, 38);
+            this.lblCash.Name = "lblCash";
+            this.lblCash.Size = new System.Drawing.Size(0, 36);
+            this.lblCash.TabIndex = 1;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -659,48 +696,11 @@
             this.button13.Text = "istatistikleri gör";
             this.button13.UseVisualStyleBackColor = true;
             // 
-            // lblChickenTitle
-            // 
-            this.lblChickenTitle.AutoSize = true;
-            this.lblChickenTitle.Location = new System.Drawing.Point(62, 122);
-            this.lblChickenTitle.Name = "lblChickenTitle";
-            this.lblChickenTitle.Size = new System.Drawing.Size(69, 16);
-            this.lblChickenTitle.TabIndex = 10;
-            this.lblChickenTitle.Text = "TAVUK 5₺";
-            // 
-            // lblChickenProductCount
-            // 
-            this.lblChickenProductCount.AutoSize = true;
-            this.lblChickenProductCount.Location = new System.Drawing.Point(147, 303);
-            this.lblChickenProductCount.Name = "lblChickenProductCount";
-            this.lblChickenProductCount.Size = new System.Drawing.Size(0, 16);
-            this.lblChickenProductCount.TabIndex = 11;
-            // 
-            // chickenPrice
-            // 
-            this.chickenPrice.AutoSize = true;
-            this.chickenPrice.Location = new System.Drawing.Point(147, 122);
-            this.chickenPrice.Name = "chickenPrice";
-            this.chickenPrice.Size = new System.Drawing.Size(28, 16);
-            this.chickenPrice.TabIndex = 12;
-            this.chickenPrice.Text = "20₺";
-            this.chickenPrice.Click += new System.EventHandler(this.chickenPrice_Click);
-            // 
-            // lblCash
-            // 
-            this.lblCash.AutoSize = true;
-            this.lblCash.Font = new System.Drawing.Font("Trebuchet MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblCash.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblCash.Location = new System.Drawing.Point(150, 38);
-            this.lblCash.Name = "lblCash";
-            this.lblCash.Size = new System.Drawing.Size(0, 36);
-            this.lblCash.TabIndex = 1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1193, 675);
+            this.ClientSize = new System.Drawing.Size(1115, 675);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.lvStats);
             this.Controls.Add(this.groupBox5);
@@ -713,8 +713,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbChicken.ResumeLayout(false);
             this.gbChicken.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudChickenAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
