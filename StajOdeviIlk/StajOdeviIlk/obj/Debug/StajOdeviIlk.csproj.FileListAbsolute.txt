@@ -1,0 +1,11 @@
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.csproj.AssemblyReference.cache
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.Form1.resources
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.Properties.Resources.resources
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.csproj.GenerateResource.cache
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.csproj.CoreCompileInputs.cache
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\bin\Debug\StajOdeviIlk.exe.config
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\bin\Debug\StajOdeviIlk.exe
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\bin\Debug\StajOdeviIlk.pdb
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.exe
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.pdb
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.exe.config
