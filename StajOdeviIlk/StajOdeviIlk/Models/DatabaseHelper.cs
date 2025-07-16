@@ -45,6 +45,8 @@ namespace StajOdeviIlk.Helpers
         // 🐔 Hayvan Ekle
         public static void AddAnimal(Animal animal)
         {
+            if (animal.SpeciesId == 2 && HasAnyAliveChicken()) return; // Tavuksa ve zaten canlı varsa ekleme
+
             using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
@@ -76,20 +78,75 @@ namespace StajOdeviIlk.Helpers
         // 🥚 Ürün Ekle
         public static void AddProduct(int animalId, int productTypeId)
         {
-            using (SqlConnection conn = GetConnection())
+            using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "INSERT INTO Products (AnimalId, ProductTypeId, Quantity, ProductionDate) VALUES (@AnimalId, @ProductTypeId, @Quantity, @Date)";
-                SqlCommand cmd = new SqlCommand(query, conn);
 
-                cmd.Parameters.AddWithValue("@AnimalId", animalId);
-                cmd.Parameters.AddWithValue("@ProductTypeId", productTypeId);
-                cmd.Parameters.AddWithValue("@Quantity", 1);
-                cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                // 1. Ürünü ekle
+                string insertQuery = @"
+            INSERT INTO Products (AnimalId, ProductTypeId, Quantity, ProductionDate, IsSold)
+            VALUES (@AnimalId, @ProductTypeId, 1, GETDATE(), 0)";
+                using (var cmd = new SqlCommand(insertQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AnimalId", animalId);
+                    cmd.Parameters.AddWithValue("@ProductTypeId", productTypeId);
+                    cmd.ExecuteNonQuery();
+                }
 
-                cmd.ExecuteNonQuery();
+                // 2. O tavuğun toplam yumurta sayısını bul
+                string getEggCountQuery = @"
+            SELECT COUNT(*) FROM Products 
+            WHERE AnimalId = @AnimalId AND ProductTypeId = 1";
+                int eggCount = 0;
+                using (var cmd = new SqlCommand(getEggCountQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AnimalId", animalId);
+                    eggCount = (int)cmd.ExecuteScalar();
+                }
+
+                // 3. Yeni yaş: 2 yumurtada 1 yaş
+                int newAge = eggCount / 2;
+
+                // 4. Yaşı güncelle
+                string updateAgeQuery = @"
+            UPDATE Animals 
+            SET Age = @NewAge 
+            WHERE Id = @AnimalId";
+                using (var cmd = new SqlCommand(updateAgeQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AnimalId", animalId);
+                    cmd.Parameters.AddWithValue("@NewAge", newAge);
+                    cmd.ExecuteNonQuery();
+                }
+
+                // 5. Yaş ≥ 6 olursa öldür
+                // 5 yaşını doldurup 6 olduğunda ölsün
+                string killQuery = @"
+    UPDATE Animals 
+    SET IsAlive = 0 
+    WHERE Id = @AnimalId AND Age >= 6";
+
+                using (var cmd = new SqlCommand(killQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AnimalId", animalId);
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
+
+        public static int GetAliveChickenCount()
+        {
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    return (int)cmd.ExecuteScalar();
+                }
+            }
+        }
+
 
         // 📦 Satılmamış ürün sayısı
         public static int GetUnsoldProductCount(int productTypeId)
@@ -195,7 +252,21 @@ namespace StajOdeviIlk.Helpers
                 }
             }
         }
-        
+        public static int GetAnimalAge(int animalId)
+        {
+            using (var conn = GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT Age FROM Animals WHERE Id = @Id";
+                using (var cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", animalId);
+                    object result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : 0;
+                }
+            }
+        }
+
 
     }
 }

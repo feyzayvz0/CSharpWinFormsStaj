@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.gbChicken = new System.Windows.Forms.GroupBox();
+            this.txtChickenAge = new System.Windows.Forms.TextBox();
             this.chickenPrice = new System.Windows.Forms.Label();
             this.lblChickenProductCount = new System.Windows.Forms.Label();
             this.lblChickenTitle = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.cbChickenGender = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nudChickenAge = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -91,7 +91,6 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button13 = new System.Windows.Forms.Button();
             this.gbChicken.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudChickenAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -107,6 +106,7 @@
             // 
             // gbChicken
             // 
+            this.gbChicken.Controls.Add(this.txtChickenAge);
             this.gbChicken.Controls.Add(this.chickenPrice);
             this.gbChicken.Controls.Add(this.lblChickenProductCount);
             this.gbChicken.Controls.Add(this.lblChickenTitle);
@@ -119,7 +119,6 @@
             this.gbChicken.Controls.Add(this.cbChickenGender);
             this.gbChicken.Controls.Add(this.label2);
             this.gbChicken.Controls.Add(this.label1);
-            this.gbChicken.Controls.Add(this.nudChickenAge);
             this.gbChicken.Controls.Add(this.pictureBox1);
             this.gbChicken.Location = new System.Drawing.Point(12, 12);
             this.gbChicken.Name = "gbChicken";
@@ -128,14 +127,22 @@
             this.gbChicken.TabStop = false;
             this.gbChicken.Text = "Tavuk";
             // 
+            // txtChickenAge
+            // 
+            this.txtChickenAge.Location = new System.Drawing.Point(74, 149);
+            this.txtChickenAge.Name = "txtChickenAge";
+            this.txtChickenAge.ReadOnly = true;
+            this.txtChickenAge.Size = new System.Drawing.Size(100, 22);
+            this.txtChickenAge.TabIndex = 18;
+            // 
             // chickenPrice
             // 
             this.chickenPrice.AutoSize = true;
-            this.chickenPrice.Location = new System.Drawing.Point(147, 122);
+            this.chickenPrice.Location = new System.Drawing.Point(116, 122);
             this.chickenPrice.Name = "chickenPrice";
-            this.chickenPrice.Size = new System.Drawing.Size(28, 16);
+            this.chickenPrice.Size = new System.Drawing.Size(107, 16);
             this.chickenPrice.TabIndex = 12;
-            this.chickenPrice.Text = "20₺";
+            this.chickenPrice.Text = "Tavuk Ücreti:20₺";
             this.chickenPrice.Click += new System.EventHandler(this.chickenPrice_Click);
             // 
             // lblChickenProductCount
@@ -149,11 +156,11 @@
             // lblChickenTitle
             // 
             this.lblChickenTitle.AutoSize = true;
-            this.lblChickenTitle.Location = new System.Drawing.Point(62, 122);
+            this.lblChickenTitle.Location = new System.Drawing.Point(12, 122);
             this.lblChickenTitle.Name = "lblChickenTitle";
-            this.lblChickenTitle.Size = new System.Drawing.Size(69, 16);
+            this.lblChickenTitle.Size = new System.Drawing.Size(73, 16);
             this.lblChickenTitle.TabIndex = 10;
-            this.lblChickenTitle.Text = "TAVUK 5₺";
+            this.lblChickenTitle.Text = "Yumurta:5₺";
             // 
             // label4
             // 
@@ -236,28 +243,6 @@
             this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Yaş:";
-            // 
-            // nudChickenAge
-            // 
-            this.nudChickenAge.Location = new System.Drawing.Point(65, 147);
-            this.nudChickenAge.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.nudChickenAge.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudChickenAge.Name = "nudChickenAge";
-            this.nudChickenAge.Size = new System.Drawing.Size(120, 22);
-            this.nudChickenAge.TabIndex = 1;
-            this.nudChickenAge.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // pictureBox1
             // 
@@ -713,7 +698,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.gbChicken.ResumeLayout(false);
             this.gbChicken.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudChickenAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -739,7 +723,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown nudChickenAge;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar pbChickenProduction;
         private System.Windows.Forms.Label label3;
@@ -797,6 +780,7 @@
         private System.Windows.Forms.Label lblChickenProductCount;
         private System.Windows.Forms.Label chickenPrice;
         private System.Windows.Forms.Label lblCash;
+        private System.Windows.Forms.TextBox txtChickenAge;
     }
 }
 
