@@ -17,6 +17,7 @@ namespace StajOdeviIlk
     {
         private Timer chickenBuyBlinkTimer = new Timer();
         private bool isBlinking = false;
+        private Timer cowBuyBlinkTimer = new Timer();
 
         public Form1()
         {
@@ -48,18 +49,31 @@ namespace StajOdeviIlk
             }
 
             DatabaseHelper.AddProduct(chickenId, 1); // Yumurtayı üret
+            DatabaseHelper.IncrementEggCount(chickenId); // 1 yumurta daha eklendi
 
-            UpdateProductCountLabel();
-            UpdateChickenAgeLabel();
+            int eggCount = DatabaseHelper.GetEggCount(chickenId); // toplam kaç yumurta oldu
 
-            if (!DatabaseHelper.HasAnyAliveChicken())
+            // 2 yumurtada 1 yaş artışı kontrolü
+            if (eggCount % 2 == 0)
             {
-                MessageBox.Show("Tavuk 6 yaşına ulaştı ve öldü. Yeni tavuk almanız gerekiyor.");
+                DatabaseHelper.IncrementAnimalAge(chickenId); // yaş bir arttı
+            }
+
+            // Yeni yaşa göre ölüm kontrolü
+            int age = DatabaseHelper.GetAnimalAge(chickenId);
+            if (age >= 5)
+            {
+                DatabaseHelper.KillAnimal(chickenId); // Tavuk öldü
+                MessageBox.Show("Tavuk 5 yaşına ulaştı ve öldü. Yeni tavuk almanız gerekiyor.");
                 btnChickenFeed.Enabled = false;
                 txtChickenAge.Text = "Yok";
                 chickenBuyBlinkTimer.Start();
             }
+
+            UpdateProductCountLabel();
+            UpdateChickenAgeLabel();
         }
+
 
 
         private void btnChickenSell_Click(object sender, EventArgs e)
@@ -148,6 +162,12 @@ namespace StajOdeviIlk
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            cbCowGender.Items.Clear();
+            cbCowGender.Items.Add("Dişi");
+            cbCowGender.SelectedIndex = 0;
+            cbCowGender.Enabled = false;
+
             cbChickenGender.Items.Clear();
             cbChickenGender.Items.Add("Dişi");
             cbChickenGender.SelectedIndex = 0;
@@ -197,9 +217,9 @@ namespace StajOdeviIlk
                 txtChickenAge.Text = "Yok";
             }
         }
-    
 
-       private void groupBox3_Enter(object sender, EventArgs e)
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }
@@ -213,8 +233,156 @@ namespace StajOdeviIlk
         {
 
         }
+
+        private async void button6_Click(object sender, EventArgs e)
+        {
+            {
+                int cowId = DatabaseHelper.GetAliveCowId();
+
+                if (cowId == -1)
+                {
+                    MessageBox.Show("Canlı inek yok! Lütfen yeni bir inek satın alın.");
+                    btnCowFeed.Enabled = false;
+                    cowBuyBlinkTimer.Start();
+                    return;
+                }
+
+                pbCowProduction.Value = 0;
+                for (int i = 0; i <= 100; i++)
+                {
+                    pbCowProduction.Value = i;
+                    await Task.Delay(50); // Tavuktan daha yavaş (tavuk 30 ms idi)
+                }
+
+                DatabaseHelper.AddProduct(cowId, 2); // Sütü üret
+                DatabaseHelper.IncrementMilkCount(cowId); // 1 süt daha eklendi
+
+                int milkCount = DatabaseHelper.GetMilkCount(cowId); // toplam kaç süt oldu
+
+                // 3 süt üretiminde 1 yaş artışı kontrolü
+                if (milkCount % 3 == 0)
+                {
+                    DatabaseHelper.IncrementAnimalAge(cowId); // yaş bir arttı
+                }
+
+                // Yeni yaşa göre ölüm kontrolü
+                int age = DatabaseHelper.GetAnimalAge(cowId);
+                if (age >= 15) // İnek 15 yaşında ölür diyelim
+                {
+                    DatabaseHelper.KillAnimal(cowId);
+                    MessageBox.Show("İnek yaşına ulaştı ve öldü. Yeni inek almanız gerekiyor.");
+                    btnCowFeed.Enabled = false;
+                    txtCowAge.Text = "Yok";
+                    cowBuyBlinkTimer.Start();
+                }
+
+                UpdateCowProductCountLabel();
+                UpdateCowAgeLabel();
+            }
+        }
+        private void UpdateCowAgeLabel()
+        {
+            int cowId = DatabaseHelper.GetAliveCowId();
+            if (cowId != -1)
+            {
+                int age = DatabaseHelper.GetAnimalAge(cowId);
+                txtCowAge.Text = age.ToString();
+            }
+            else
+            {
+                txtCowAge.Text = "Yok";
+            }
+        }
+
+        private void UpdateCowProductCountLabel()
+        {
+            int count = DatabaseHelper.GetUnsoldProductCount(2); // Diyelim 2 = süt
+            lblCowProductCount.Text = $"Süt: {count}";
+        }
+
         
-      
+        private void btnCowSell_Click(object sender, EventArgs e)
+        {
+            {
+                int productTypeId = 2; // 2 = Süt (ProductTypes tablosundaki süt ID'si)
+                int unsoldCount = DatabaseHelper.GetUnsoldProductCount(productTypeId);
+
+                if (unsoldCount == 0)
+                {
+                    MessageBox.Show("Satılacak süt yok!");
+                    return;
+                }
+
+                string input = Microsoft.VisualBasic.Interaction.InputBox(
+                    $"Kasada {unsoldCount} süt var. Kaç litre satmak istersiniz?",
+                    "Süt Sat", "1");
+
+                if (string.IsNullOrWhiteSpace(input)) return;
+
+                if (!int.TryParse(input, out int quantityToSell))
+                {
+                    MessageBox.Show("Geçerli bir sayı giriniz.");
+                    return;
+                }
+
+                if (quantityToSell > unsoldCount)
+                {
+                    MessageBox.Show("Stokta bu kadar süt yok!");
+                    return;
+                }
+
+                decimal unitPrice = 10; // Örnek birim fiyat
+                int soldCount = DatabaseHelper.SellProducts(productTypeId, quantityToSell);
+                decimal totalEarned = soldCount * unitPrice;
+
+                DatabaseHelper.AddCash(totalEarned);
+                UpdateCowProductCountLabel();
+                UpdateCashLabel();
+
+                MessageBox.Show($"{soldCount} litre süt satıldı. Kasaya {totalEarned:C} eklendi.");
+            }
+
+        }
+
+        private void btnCowBuy_Click(object sender, EventArgs e)
+        {
+            if (DatabaseHelper.HasAnyAliveCow())
+            {
+                MessageBox.Show("Zaten canlı bir ineğiniz var! Önce onun ölmesini bekleyin.");
+                return;
+            }
+
+            decimal cowPrice = 100;
+
+            if (!DatabaseHelper.HasEnoughCash(cowPrice))
+            {
+                MessageBox.Show("Yetersiz bakiye!");
+                return;
+            }
+
+            Cow cow = new Cow
+            {
+                Age = 1,
+                Gender = "Dişi",  // BURADA SADECE DİŞİ OLACAK
+                SpeciesId = 3,    // İnek türü ID'si
+                Lifespan = 200
+            };
+
+            DatabaseHelper.AddAnimal(cow);
+            DatabaseHelper.DeductCash(cowPrice);
+
+            UpdateCashLabel();
+            UpdateCowAgeLabel();
+
+            MessageBox.Show("Yeni inek satın alındı!");
+            //btnCowMilk.Enabled = true;
+
+            cowBuyBlinkTimer.Stop();
+            btnCowBuy.BackColor = SystemColors.Control;
+        }
+
+
+
 
 
     }

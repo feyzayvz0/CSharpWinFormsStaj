@@ -13,8 +13,11 @@ namespace StajOdeviIlk.Models
         {
             return new Product
             {
-                ProductTypeId = 2
+                ProductTypeId = 2, // 2 = Süt (ProductTypes tablosuna göre)
+                Quantity = 1,
+                ProductionDate = DateTime.Now
             };
         }
     }
 }
+
