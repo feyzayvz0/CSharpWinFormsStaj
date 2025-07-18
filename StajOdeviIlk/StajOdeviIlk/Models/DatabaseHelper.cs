@@ -328,8 +328,31 @@ namespace StajOdeviIlk.Helpers
                 }
             }
         }
-
-
+        public static bool HasAnyAliveSheep()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1";
+                SqlCommand command = new SqlCommand(query, connection);
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+        public static int? GetAliveSheepId()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1";
+                SqlCommand command = new SqlCommand(query, connection);
+                object result = command.ExecuteScalar();
+                if (result != null)
+                    return Convert.ToInt32(result);
+                return null;
+            }
+        }
+      
 
     }
 }

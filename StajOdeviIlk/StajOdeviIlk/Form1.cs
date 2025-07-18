@@ -162,7 +162,7 @@ namespace StajOdeviIlk
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            UpdateCowAgeLabel();
             cbCowGender.Items.Clear();
             cbCowGender.Items.Add("Dişi");
             cbCowGender.SelectedIndex = 0;
@@ -179,6 +179,14 @@ namespace StajOdeviIlk
                 btnChickenBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
                 isBlinking = !isBlinking;
             };
+
+            cowBuyBlinkTimer.Interval = 500;
+            cowBuyBlinkTimer.Tick += (sender2, args2) =>
+            {
+                btnCowBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
+                isBlinking = !isBlinking;
+            };
+
 
             if (!DatabaseHelper.HasAnyAliveChicken())
             {
@@ -270,7 +278,7 @@ namespace StajOdeviIlk
                 if (age >= 15) // İnek 15 yaşında ölür diyelim
                 {
                     DatabaseHelper.KillAnimal(cowId);
-                    MessageBox.Show("İnek yaşına ulaştı ve öldü. Yeni inek almanız gerekiyor.");
+                    MessageBox.Show("İnek 15 yaşına ulaştı ve öldü. Yeni inek almanız gerekiyor.");
                     btnCowFeed.Enabled = false;
                     txtCowAge.Text = "Yok";
                     cowBuyBlinkTimer.Start();
@@ -379,6 +387,55 @@ namespace StajOdeviIlk
 
             cowBuyBlinkTimer.Stop();
             btnCowBuy.BackColor = SystemColors.Control;
+        }
+        private void btnSheepBuy_Click(object sender, EventArgs e)
+        {
+            if (DatabaseHelper.HasAnyAliveSheep())
+            {
+                MessageBox.Show("Zaten canlı bir koyununuz var! Önce onun ölmesini bekleyin.");
+                return;
+            }
+
+            decimal sheepPrice = 80;
+
+            if (!DatabaseHelper.HasEnoughCash(sheepPrice))
+            {
+                MessageBox.Show("Yetersiz bakiye!");
+                return;
+            }
+
+            Sheep sheep = new Sheep
+            {
+                Age = 1,
+                Gender = "Dişi",
+                SpeciesId = 4,
+                Lifespan = 150
+            };
+
+            DatabaseHelper.AddAnimal(sheep);
+            DatabaseHelper.DeductCash(sheepPrice);
+
+            UpdateCashLabel();
+            UpdateSheepAgeLabel();
+
+            MessageBox.Show("Yeni koyun satın alındı!");
+            btnSheepWool.Enabled = true;
+
+            sheepBuyBlinkTimer.Stop();
+            btnSheepWool.BackColor = SystemColors.Control;
+        }
+        private void UpdateSheepAgeLabel()
+        {
+            int? sheepId = DatabaseHelper.GetAliveSheepId();
+            if (sheepId.HasValue)
+            {
+                int age = DatabaseHelper.GetAnimalAge(sheepId.Value);
+                txtSheepAge.Text = $"Koyun Yaşı: {age}";
+            }
+            else
+            {
+                txtSheepAge.Text = "Koyun Yok";
+            }
         }
 
 

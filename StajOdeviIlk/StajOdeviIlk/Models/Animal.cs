@@ -14,7 +14,12 @@ using System.Threading.Tasks;
         public int Age { get; set; }
         public string Gender { get; set; }
         public int Lifespan { get; set; }
+        public bool IsAlive { get; set; } = true;
 
+        public virtual void AgeUp()
+        {
+            Age++;
+        }
 
         public abstract Product Produce();
     }
