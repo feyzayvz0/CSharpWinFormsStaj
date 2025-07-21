@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gbChicken = new System.Windows.Forms.GroupBox();
             this.txtChickenAge = new System.Windows.Forms.TextBox();
             this.chickenPrice = new System.Windows.Forms.Label();
@@ -58,27 +58,28 @@
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblSheepProductCount = new System.Windows.Forms.Label();
+            this.txtSheepAge = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.pbSheepProduction = new System.Windows.Forms.ProgressBar();
             this.label10 = new System.Windows.Forms.Label();
             this.btnSheepBuy = new System.Windows.Forms.Button();
+            this.btnSheepSell = new System.Windows.Forms.Button();
             this.btnSheepWool = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbSheepGender = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.pbGooseProduction = new System.Windows.Forms.ProgressBar();
             this.label14 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnGooseBuy = new System.Windows.Forms.Button();
+            this.btnGooseSell = new System.Windows.Forms.Button();
+            this.btnGooseFeed = new System.Windows.Forms.Button();
+            this.cbGooseGender = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblCash = new System.Windows.Forms.Label();
@@ -91,8 +92,8 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button13 = new System.Windows.Forms.Button();
-            this.sheepBuyBlinkTimer = new System.Windows.Forms.Timer(this.components);
-            this.txtSheepAge = new System.Windows.Forms.TextBox();
+            this.txtGooseAge = new System.Windows.Forms.TextBox();
+            this.lblGooseProductCount = new System.Windows.Forms.Label();
             this.gbChicken.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -100,7 +101,6 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -149,10 +149,11 @@
             // lblChickenProductCount
             // 
             this.lblChickenProductCount.AutoSize = true;
-            this.lblChickenProductCount.Location = new System.Drawing.Point(147, 303);
+            this.lblChickenProductCount.Location = new System.Drawing.Point(133, 303);
             this.lblChickenProductCount.Name = "lblChickenProductCount";
-            this.lblChickenProductCount.Size = new System.Drawing.Size(0, 16);
+            this.lblChickenProductCount.Size = new System.Drawing.Size(10, 16);
             this.lblChickenProductCount.TabIndex = 11;
+            this.lblChickenProductCount.Text = ".";
             // 
             // lblChickenTitle
             // 
@@ -381,14 +382,15 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblSheepProductCount);
             this.groupBox3.Controls.Add(this.txtSheepAge);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.progressBar3);
+            this.groupBox3.Controls.Add(this.pbSheepProduction);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.btnSheepBuy);
+            this.groupBox3.Controls.Add(this.btnSheepSell);
             this.groupBox3.Controls.Add(this.btnSheepWool);
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.cbSheepGender);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.pictureBox3);
@@ -400,6 +402,23 @@
             this.groupBox3.Text = "Koyun";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // lblSheepProductCount
+            // 
+            this.lblSheepProductCount.AutoSize = true;
+            this.lblSheepProductCount.Location = new System.Drawing.Point(158, 303);
+            this.lblSheepProductCount.Name = "lblSheepProductCount";
+            this.lblSheepProductCount.Size = new System.Drawing.Size(10, 16);
+            this.lblSheepProductCount.TabIndex = 11;
+            this.lblSheepProductCount.Text = ".";
+            this.lblSheepProductCount.Click += new System.EventHandler(this.UpdateSheepProductCountLabel_Click);
+            // 
+            // txtSheepAge
+            // 
+            this.txtSheepAge.Location = new System.Drawing.Point(85, 148);
+            this.txtSheepAge.Name = "txtSheepAge";
+            this.txtSheepAge.Size = new System.Drawing.Size(100, 22);
+            this.txtSheepAge.TabIndex = 10;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -409,12 +428,12 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Üretilen Ürün Sayısı:";
             // 
-            // progressBar3
+            // pbSheepProduction
             // 
-            this.progressBar3.Location = new System.Drawing.Point(9, 277);
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(205, 23);
-            this.progressBar3.TabIndex = 8;
+            this.pbSheepProduction.Location = new System.Drawing.Point(9, 277);
+            this.pbSheepProduction.Name = "pbSheepProduction";
+            this.pbSheepProduction.Size = new System.Drawing.Size(205, 23);
+            this.pbSheepProduction.TabIndex = 8;
             // 
             // label10
             // 
@@ -433,32 +452,36 @@
             this.btnSheepBuy.TabIndex = 7;
             this.btnSheepBuy.Text = "Yeni Hayvan Satın Al";
             this.btnSheepBuy.UseVisualStyleBackColor = true;
+            this.btnSheepBuy.Click += new System.EventHandler(this.btnSheepBuy_Click);
+            // 
+            // btnSheepSell
+            // 
+            this.btnSheepSell.Location = new System.Drawing.Point(44, 322);
+            this.btnSheepSell.Name = "btnSheepSell";
+            this.btnSheepSell.Size = new System.Drawing.Size(154, 23);
+            this.btnSheepSell.TabIndex = 6;
+            this.btnSheepSell.Text = "Ürünleri Sat";
+            this.btnSheepSell.UseVisualStyleBackColor = true;
+            this.btnSheepSell.Click += new System.EventHandler(this.btnSheepSell_Click);
             // 
             // btnSheepWool
             // 
-            this.btnSheepWool.Location = new System.Drawing.Point(44, 322);
+            this.btnSheepWool.Location = new System.Drawing.Point(43, 232);
             this.btnSheepWool.Name = "btnSheepWool";
-            this.btnSheepWool.Size = new System.Drawing.Size(154, 23);
-            this.btnSheepWool.TabIndex = 6;
-            this.btnSheepWool.Text = "Ürünleri Sat";
+            this.btnSheepWool.Size = new System.Drawing.Size(159, 23);
+            this.btnSheepWool.TabIndex = 5;
+            this.btnSheepWool.Text = "Besle";
             this.btnSheepWool.UseVisualStyleBackColor = true;
+            this.btnSheepWool.Click += new System.EventHandler(this.btnSheepWool_Click);
             // 
-            // button9
+            // cbSheepGender
             // 
-            this.button9.Location = new System.Drawing.Point(44, 232);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(159, 23);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Besle";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(74, 183);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(94, 24);
-            this.comboBox3.TabIndex = 4;
+            this.cbSheepGender.FormattingEnabled = true;
+            this.cbSheepGender.Location = new System.Drawing.Point(74, 183);
+            this.cbSheepGender.Name = "cbSheepGender";
+            this.cbSheepGender.Size = new System.Drawing.Size(94, 24);
+            this.cbSheepGender.TabIndex = 4;
+            this.cbSheepGender.SelectedIndexChanged += new System.EventHandler(this.cbSheepGender_SelectedIndexChanged);
             // 
             // label11
             // 
@@ -488,16 +511,17 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblGooseProductCount);
+            this.groupBox4.Controls.Add(this.txtGooseAge);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.progressBar4);
+            this.groupBox4.Controls.Add(this.pbGooseProduction);
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.button10);
-            this.groupBox4.Controls.Add(this.button11);
-            this.groupBox4.Controls.Add(this.button12);
-            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.btnGooseBuy);
+            this.groupBox4.Controls.Add(this.btnGooseSell);
+            this.groupBox4.Controls.Add(this.btnGooseFeed);
+            this.groupBox4.Controls.Add(this.cbGooseGender);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label16);
-            this.groupBox4.Controls.Add(this.numericUpDown4);
             this.groupBox4.Controls.Add(this.pictureBox4);
             this.groupBox4.Location = new System.Drawing.Point(839, 12);
             this.groupBox4.Name = "groupBox4";
@@ -515,12 +539,12 @@
             this.label13.TabIndex = 9;
             this.label13.Text = "Üretilen Ürün Sayısı:";
             // 
-            // progressBar4
+            // pbGooseProduction
             // 
-            this.progressBar4.Location = new System.Drawing.Point(9, 277);
-            this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(205, 23);
-            this.progressBar4.TabIndex = 8;
+            this.pbGooseProduction.Location = new System.Drawing.Point(9, 277);
+            this.pbGooseProduction.Name = "pbGooseProduction";
+            this.pbGooseProduction.Size = new System.Drawing.Size(205, 23);
+            this.pbGooseProduction.TabIndex = 8;
             // 
             // label14
             // 
@@ -531,40 +555,42 @@
             this.label14.TabIndex = 1;
             this.label14.Text = "Ürün Süreci";
             // 
-            // button10
+            // btnGooseBuy
             // 
-            this.button10.Location = new System.Drawing.Point(44, 351);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(154, 23);
-            this.button10.TabIndex = 7;
-            this.button10.Text = "Yeni Hayvan Satın Al";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnGooseBuy.Location = new System.Drawing.Point(44, 351);
+            this.btnGooseBuy.Name = "btnGooseBuy";
+            this.btnGooseBuy.Size = new System.Drawing.Size(154, 23);
+            this.btnGooseBuy.TabIndex = 7;
+            this.btnGooseBuy.Text = "Yeni Hayvan Satın Al";
+            this.btnGooseBuy.UseVisualStyleBackColor = true;
+            this.btnGooseBuy.Click += new System.EventHandler(this.btnGooseBuy_Click);
             // 
-            // button11
+            // btnGooseSell
             // 
-            this.button11.Location = new System.Drawing.Point(44, 322);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(154, 23);
-            this.button11.TabIndex = 6;
-            this.button11.Text = "Ürünleri Sat";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnGooseSell.Location = new System.Drawing.Point(44, 322);
+            this.btnGooseSell.Name = "btnGooseSell";
+            this.btnGooseSell.Size = new System.Drawing.Size(154, 23);
+            this.btnGooseSell.TabIndex = 6;
+            this.btnGooseSell.Text = "Ürünleri Sat";
+            this.btnGooseSell.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnGooseFeed
             // 
-            this.button12.Location = new System.Drawing.Point(44, 232);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(159, 23);
-            this.button12.TabIndex = 5;
-            this.button12.Text = "Besle";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnGooseFeed.Location = new System.Drawing.Point(44, 232);
+            this.btnGooseFeed.Name = "btnGooseFeed";
+            this.btnGooseFeed.Size = new System.Drawing.Size(159, 23);
+            this.btnGooseFeed.TabIndex = 5;
+            this.btnGooseFeed.Text = "Besle";
+            this.btnGooseFeed.UseVisualStyleBackColor = true;
+            this.btnGooseFeed.Click += new System.EventHandler(this.btnGooseFeed_Click);
             // 
-            // comboBox4
+            // cbGooseGender
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(74, 183);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(94, 24);
-            this.comboBox4.TabIndex = 4;
+            this.cbGooseGender.FormattingEnabled = true;
+            this.cbGooseGender.Location = new System.Drawing.Point(74, 183);
+            this.cbGooseGender.Name = "cbGooseGender";
+            this.cbGooseGender.Size = new System.Drawing.Size(94, 24);
+            this.cbGooseGender.TabIndex = 4;
             // 
             // label15
             // 
@@ -583,13 +609,6 @@
             this.label16.Size = new System.Drawing.Size(34, 16);
             this.label16.TabIndex = 2;
             this.label16.Text = "Yaş:";
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(65, 147);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown4.TabIndex = 1;
             // 
             // pictureBox4
             // 
@@ -616,7 +635,7 @@
             this.lblCash.AutoSize = true;
             this.lblCash.Font = new System.Drawing.Font("Trebuchet MS", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblCash.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblCash.Location = new System.Drawing.Point(150, 38);
+            this.lblCash.Location = new System.Drawing.Point(110, 48);
             this.lblCash.Name = "lblCash";
             this.lblCash.Size = new System.Drawing.Size(0, 36);
             this.lblCash.TabIndex = 1;
@@ -624,7 +643,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 53);
+            this.label17.Location = new System.Drawing.Point(5, 53);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(99, 16);
             this.label17.TabIndex = 0;
@@ -688,17 +707,27 @@
             this.button13.Text = "istatistikleri gör";
             this.button13.UseVisualStyleBackColor = true;
             // 
-            // txtSheepAge
+            // txtGooseAge
             // 
-            this.txtSheepAge.Location = new System.Drawing.Point(85, 148);
-            this.txtSheepAge.Name = "txtSheepAge";
-            this.txtSheepAge.Size = new System.Drawing.Size(100, 22);
-            this.txtSheepAge.TabIndex = 10;
+            this.txtGooseAge.Location = new System.Drawing.Point(88, 149);
+            this.txtGooseAge.Name = "txtGooseAge";
+            this.txtGooseAge.Size = new System.Drawing.Size(100, 22);
+            this.txtGooseAge.TabIndex = 10;
+            // 
+            // lblGooseProductCount
+            // 
+            this.lblGooseProductCount.AutoSize = true;
+            this.lblGooseProductCount.Location = new System.Drawing.Point(158, 303);
+            this.lblGooseProductCount.Name = "lblGooseProductCount";
+            this.lblGooseProductCount.Size = new System.Drawing.Size(10, 16);
+            this.lblGooseProductCount.TabIndex = 11;
+            this.lblGooseProductCount.Text = ".";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1115, 675);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.button13);
@@ -721,7 +750,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -755,26 +783,25 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.ProgressBar pbSheepProduction;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btnSheepBuy;
+        private System.Windows.Forms.Button btnSheepSell;
         private System.Windows.Forms.Button btnSheepWool;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbSheepGender;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ProgressBar progressBar4;
+        private System.Windows.Forms.ProgressBar pbGooseProduction;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnGooseBuy;
+        private System.Windows.Forms.Button btnGooseSell;
+        private System.Windows.Forms.Button btnGooseFeed;
+        private System.Windows.Forms.ComboBox cbGooseGender;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label17;
@@ -793,8 +820,10 @@
         private System.Windows.Forms.TextBox txtChickenAge;
         private System.Windows.Forms.TextBox txtCowAge;
         private System.Windows.Forms.Label lblCowProductCount;
-        private System.Windows.Forms.Timer sheepBuyBlinkTimer;
         private System.Windows.Forms.TextBox txtSheepAge;
+        private System.Windows.Forms.Label lblSheepProductCount;
+        private System.Windows.Forms.Label lblGooseProductCount;
+        private System.Windows.Forms.TextBox txtGooseAge;
     }
 }
 

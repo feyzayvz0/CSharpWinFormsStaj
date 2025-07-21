@@ -45,7 +45,7 @@ namespace StajOdeviIlk.Helpers
         // 🐔 Hayvan Ekle
         public static void AddAnimal(Animal animal)
         {
-            if (animal.SpeciesId == 2 && HasAnyAliveChicken()) return; // Tavuksa ve zaten canlı varsa ekleme
+            if (animal.SpeciesId == 1 && HasAnyAliveChicken()) return; // Tavuksa ve zaten canlı varsa ekleme
 
             using (SqlConnection conn = GetConnection())
             {
@@ -67,7 +67,7 @@ namespace StajOdeviIlk.Helpers
             using (SqlConnection conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
+                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 1 AND IsAlive = 1";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 object result = cmd.ExecuteScalar();
 
@@ -100,7 +100,7 @@ namespace StajOdeviIlk.Helpers
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 1 AND IsAlive = 1";
                 using (var cmd = new SqlCommand(query, conn))
                 {
                     return (int)cmd.ExecuteScalar();
@@ -205,7 +205,7 @@ namespace StajOdeviIlk.Helpers
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 1 AND IsAlive = 1";
                 using (var cmd = new SqlCommand(query, conn))
                 {
                     int count = (int)cmd.ExecuteScalar();
@@ -306,7 +306,7 @@ namespace StajOdeviIlk.Helpers
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1";
+                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
                 // Burada SpeciesId = 3 diyelim, inek türü için (veritabanındaki id'yi kontrol et)
                 using (var cmd = new SqlCommand(query, conn))
                 {
@@ -320,7 +320,7 @@ namespace StajOdeviIlk.Helpers
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1"; // 3: İnek türü ID'si
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1"; // 3: İnek türü ID'si
                 using (var cmd = new SqlCommand(query, conn))
                 {
                     int count = (int)cmd.ExecuteScalar();
@@ -333,13 +333,86 @@ namespace StajOdeviIlk.Helpers
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1";
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1";
                 SqlCommand command = new SqlCommand(query, connection);
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
             }
         }
         public static int? GetAliveSheepId()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1";
+                SqlCommand command = new SqlCommand(query, connection);
+                object result = command.ExecuteScalar();
+                if (result != null)
+                    return Convert.ToInt32(result);
+                return null;
+            }
+        }
+        public static void IncrementWoolCount(int sheepId)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = "UPDATE Animals SET WoolProductionCount = ISNULL(WoolProductionCount, 0) + 1 WHERE Id = @Id AND SpeciesId = 3"; // 3 = koyun
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", sheepId);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public static int GetWoolCount(int sheepId)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = "SELECT ISNULL(WoolProductionCount, 0) FROM Animals WHERE Id = @Id AND SpeciesId = 3"; // 3 = koyun
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", sheepId);
+                object result = command.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : 0;
+            }
+        }
+        public static string GetAnimalGender(int animalId)
+        {
+            string gender = null;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string query = "SELECT Gender FROM Animals WHERE Id = @Id";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", animalId);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    gender = reader["Gender"].ToString();
+                }
+
+                reader.Close();
+            }
+
+            return gender;
+        }
+        public static bool HasAnyAliveGoose()
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1"; // 4 = kaz türü
+                SqlCommand command = new SqlCommand(query, connection);
+                int count = (int)command.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        public static int? GetAliveGooseId()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -352,7 +425,42 @@ namespace StajOdeviIlk.Helpers
                 return null;
             }
         }
-      
+        public static void IncrementGooseProductCount(int gooseId)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                connection.Open();
+
+                // 1. Mevcut üretim sayısını al
+                string selectQuery = "SELECT FeatherProductionCount FROM Animals WHERE Id = @id AND SpeciesId = 4";
+                SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
+                selectCommand.Parameters.AddWithValue("@id", gooseId);
+
+                int currentCount = Convert.ToInt32(selectCommand.ExecuteScalar());
+
+                // 2. FeatherProductionCount +1
+                string updateFeatherQuery = "UPDATE Animals SET FeatherProductionCount = FeatherProductionCount + 1 WHERE Id = @id AND SpeciesId = 4";
+                SqlCommand updateCommand = new SqlCommand(updateFeatherQuery, connection);
+                updateCommand.Parameters.AddWithValue("@id", gooseId);
+                updateCommand.ExecuteNonQuery();
+
+                // 3. Yeni değer 3'ün katı mı? Evetse yaşı +1 yap
+                int newCount = currentCount + 1;
+                if (newCount % 3 == 0)
+                {
+                    string ageUpdateQuery = "UPDATE Animals SET Age = Age + 1 WHERE Id = @id AND SpeciesId = 4";
+                    SqlCommand ageCommand = new SqlCommand(ageUpdateQuery, connection);
+                    ageCommand.Parameters.AddWithValue("@id", gooseId);
+                    ageCommand.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+
+
+
+
 
     }
 }

@@ -18,12 +18,99 @@ namespace StajOdeviIlk
         private Timer chickenBuyBlinkTimer = new Timer();
         private bool isBlinking = false;
         private Timer cowBuyBlinkTimer = new Timer();
+        private Timer sheepBuyBlinkTimer = new Timer();
+        private Timer gooseBuyBlinkTimer = new Timer();
 
         public Form1()
         {
             InitializeComponent();
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            UpdateGooseAgeLabel();
 
+            LoadSheepInfo();
+            UpdateCowAgeLabel();
+            cbCowGender.Items.Clear();
+            cbCowGender.Items.Add("Dişi");
+            cbCowGender.SelectedIndex = 0;
+            cbCowGender.Enabled = false;
+
+            cbChickenGender.Items.Clear();
+            cbChickenGender.Items.Add("Dişi");
+            cbChickenGender.SelectedIndex = 0;
+            cbChickenGender.Enabled = false;
+
+            cbSheepGender.Items.Clear();
+            cbSheepGender.Items.Add("Seçiniz");   // Boş / zorunlu seçim için
+            cbSheepGender.Items.Add("Dişi");
+            cbSheepGender.Items.Add("Erkek");
+            cbSheepGender.SelectedIndex = 0;
+
+            cbGooseGender.Items.Clear();
+            cbGooseGender.Items.Add("Seçiniz");
+            cbGooseGender.Items.Add("Dişi");
+            cbGooseGender.Items.Add("Erkek");
+            cbGooseGender.SelectedIndex = 0; // Varsayılan "Seçiniz"
+
+            int? sheepId = DatabaseHelper.GetAliveSheepId();
+            if (sheepId.HasValue)
+            {
+                string gender = DatabaseHelper.GetAnimalGender(sheepId.Value);
+                if (!string.IsNullOrEmpty(gender))
+                {
+                    int index = cbSheepGender.Items.IndexOf(gender);
+                    if (index >= 0)
+                        cbSheepGender.SelectedIndex = index;
+                }
+            }
+
+            chickenBuyBlinkTimer.Interval = 500;
+            chickenBuyBlinkTimer.Tick += (sender2, args2) =>
+            {
+                btnChickenBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
+                isBlinking = !isBlinking;
+            };
+
+            cowBuyBlinkTimer.Interval = 500;
+            cowBuyBlinkTimer.Tick += (sender2, args2) =>
+            {
+                btnCowBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
+                isBlinking = !isBlinking;
+            };
+
+            sheepBuyBlinkTimer.Interval = 500;
+            sheepBuyBlinkTimer.Tick += (sender3, args3) =>
+            {
+                btnSheepBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
+                isBlinking = !isBlinking;
+            };
+            gooseBuyBlinkTimer.Interval = 500;
+            gooseBuyBlinkTimer.Tick += (sender3, args3) =>
+            {
+                btnGooseBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
+                isBlinking = !isBlinking;
+            };
+            btnSheepSell.Enabled = DatabaseHelper.HasAnyAliveSheep();
+
+
+            if (!DatabaseHelper.HasAnyAliveChicken())
+            {
+                Chicken chicken = new Chicken
+                {
+                    Age = 1,
+                    Gender = "Dişi",
+                    SpeciesId = 1,
+                    Lifespan = 100
+                };
+                DatabaseHelper.AddAnimal(chicken);
+            }
+
+            UpdateProductCountLabel();
+            UpdateCashLabel();
+            UpdateChickenAgeLabel();
+            btnChickenFeed.Enabled = DatabaseHelper.HasAnyAliveChicken();
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -137,7 +224,7 @@ namespace StajOdeviIlk
             {
                 Age = 1,
                 Gender = "Dişi",
-                SpeciesId = 2,
+                SpeciesId = 1,
                 Lifespan = 100
             };
 
@@ -160,51 +247,7 @@ namespace StajOdeviIlk
             lblChickenProductCount.Text = $"Yumurta: {count}";
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            UpdateCowAgeLabel();
-            cbCowGender.Items.Clear();
-            cbCowGender.Items.Add("Dişi");
-            cbCowGender.SelectedIndex = 0;
-            cbCowGender.Enabled = false;
 
-            cbChickenGender.Items.Clear();
-            cbChickenGender.Items.Add("Dişi");
-            cbChickenGender.SelectedIndex = 0;
-            cbChickenGender.Enabled = false;
-
-            chickenBuyBlinkTimer.Interval = 500;
-            chickenBuyBlinkTimer.Tick += (sender2, args2) =>
-            {
-                btnChickenBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
-                isBlinking = !isBlinking;
-            };
-
-            cowBuyBlinkTimer.Interval = 500;
-            cowBuyBlinkTimer.Tick += (sender2, args2) =>
-            {
-                btnCowBuy.BackColor = isBlinking ? Color.LightGreen : SystemColors.Control;
-                isBlinking = !isBlinking;
-            };
-
-
-            if (!DatabaseHelper.HasAnyAliveChicken())
-            {
-                Chicken chicken = new Chicken
-                {
-                    Age = 1,
-                    Gender = "Dişi",
-                    SpeciesId = 2,
-                    Lifespan = 100
-                };
-                DatabaseHelper.AddAnimal(chicken);
-            }
-
-            UpdateProductCountLabel();
-            UpdateCashLabel();
-            UpdateChickenAgeLabel();
-            btnChickenFeed.Enabled = DatabaseHelper.HasAnyAliveChicken();
-        }
 
         private void UpdateCashLabel()
         {
@@ -308,7 +351,7 @@ namespace StajOdeviIlk
             lblCowProductCount.Text = $"Süt: {count}";
         }
 
-        
+
         private void btnCowSell_Click(object sender, EventArgs e)
         {
             {
@@ -372,7 +415,7 @@ namespace StajOdeviIlk
             {
                 Age = 1,
                 Gender = "Dişi",  // BURADA SADECE DİŞİ OLACAK
-                SpeciesId = 3,    // İnek türü ID'si
+                SpeciesId = 2,    // İnek türü ID'si
                 Lifespan = 200
             };
 
@@ -404,11 +447,22 @@ namespace StajOdeviIlk
                 return;
             }
 
+            // ✅ Cinsiyet Seçimi MessageBox (button ile)
+            DialogResult genderResult = MessageBox.Show(
+      "Yeni koyunun cinsiyeti ne olacak?\nEvet: Erkek\nHayır: Dişi",
+      "Cinsiyet Seçimi",
+      MessageBoxButtons.YesNo,
+      MessageBoxIcon.Question);
+
+            string selectedGender = (genderResult == DialogResult.Yes) ? "Erkek" : "Dişi";
+
+
+            // ✅ Yeni koyun oluştur
             Sheep sheep = new Sheep
             {
                 Age = 1,
-                Gender = "Dişi",
-                SpeciesId = 4,
+                Gender = selectedGender,
+                SpeciesId = 3,
                 Lifespan = 150
             };
 
@@ -419,18 +473,28 @@ namespace StajOdeviIlk
             UpdateSheepAgeLabel();
 
             MessageBox.Show("Yeni koyun satın alındı!");
-            btnSheepWool.Enabled = true;
 
+            // ✅ Butonları aktif/pasif ayarla
+            btnSheepWool.Enabled = true;
+            btnSheepSell.Enabled = true;
+            btnSheepBuy.Enabled = false;
+
+            // ✅ Cinsiyet comboBox sıfırlama (görsel temizlik)
+            cbSheepGender.SelectedIndex = 0;
+
+            // ✅ Görsel düzen
             sheepBuyBlinkTimer.Stop();
-            btnSheepWool.BackColor = SystemColors.Control;
+            btnSheepBuy.BackColor = SystemColors.Control;
         }
+
+
         private void UpdateSheepAgeLabel()
         {
             int? sheepId = DatabaseHelper.GetAliveSheepId();
             if (sheepId.HasValue)
             {
                 int age = DatabaseHelper.GetAnimalAge(sheepId.Value);
-                txtSheepAge.Text = $"Koyun Yaşı: {age}";
+                txtSheepAge.Text = $"{age}";
             }
             else
             {
@@ -439,8 +503,320 @@ namespace StajOdeviIlk
         }
 
 
+        private async void btnSheepWool_Click(object sender, EventArgs e)
+        {
+            string selectedGender = cbSheepGender.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedGender) || selectedGender == "Seçiniz")
+            {
+                MessageBox.Show("Lütfen koyunun cinsiyetini seçin, besleme yapılamaz.");
+                return;
+            }
+
+            int sheepId = DatabaseHelper.GetAliveSheepId() ?? -1;
+
+            if (sheepId == -1)
+            {
+                MessageBox.Show("Canlı koyun yok! Lütfen yeni bir koyun satın alın.");
+                btnSheepWool.Enabled = false;
+                sheepBuyBlinkTimer.Start();
+                return;
+            }
+
+            // Besleme animasyonu
+            pbSheepProduction.Value = 0;
+            for (int i = 0; i <= 100; i++)
+            {
+                pbSheepProduction.Value = i;
+                await Task.Delay(70);
+            }
+
+            DatabaseHelper.AddProduct(sheepId, 3); // 3 = Yün
+            DatabaseHelper.IncrementWoolCount(sheepId);
+
+            int woolCount = DatabaseHelper.GetWoolCount(sheepId);
+
+            if (woolCount % 2 == 0)
+            {
+                DatabaseHelper.IncrementAnimalAge(sheepId);
+            }
+
+            int age = DatabaseHelper.GetAnimalAge(sheepId);
+            if (age >= 10)
+            {
+                DatabaseHelper.KillAnimal(sheepId);
+                MessageBox.Show("Koyun 10 yaşına ulaştı ve öldü. Yeni koyun almanız gerekiyor.");
+                btnSheepWool.Enabled = false;
+                txtSheepAge.Text = "Yok";
+                sheepBuyBlinkTimer.Start();
+
+                // Yeni koyunun cinsiyetini seçmek için kullanıcıya MessageBox sorusu
+                DialogResult result = MessageBox.Show("Yeni koyun erkek mi olsun?", "Yeni Koyun Cinsiyeti", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                string gender = (result == DialogResult.Yes) ? "Erkek" : "Dişi";
+
+                Sheep newSheep = new Sheep
+                {
+                    Age = 1,
+                    Gender = gender,
+                    SpeciesId = 3,
+                    Lifespan = 150
+                };
+
+                DatabaseHelper.AddAnimal(newSheep);
+
+                // ComboBox'ta varsa seçili hale getir
+                if (cbSheepGender.Items.Contains(gender))
+                {
+                    cbSheepGender.SelectedItem = gender;
+                }
+
+                UpdateSheepAgeLabel();
+                UpdateSheepProductCountLabel();
+
+                MessageBox.Show("Yeni koyun başarıyla oluşturuldu.");
+                btnSheepWool.Enabled = true; // Besle butonunu tekrar aktif et
+            }
+            else
+            {
+                UpdateSheepAgeLabel();
+                UpdateSheepProductCountLabel();
+            }
+        }
 
 
+        private void UpdateSheepProductCountLabel()
+        {
+            int count = DatabaseHelper.GetUnsoldProductCount(3); // 3 = Yün
+            lblSheepProductCount.Text = $"Yün: {count}";
+        }
 
+
+        private void btnSheepSell_Click(object sender, EventArgs e)
+        {
+            int productTypeId = 3;
+            int unsoldCount = DatabaseHelper.GetUnsoldProductCount(productTypeId);
+
+            if (unsoldCount == 0)
+            {
+                MessageBox.Show("Satılacak yün yok!");
+                return;
+            }
+
+            string input = Microsoft.VisualBasic.Interaction.InputBox(
+                $"Kasada {unsoldCount} yün var. Kaç tane satmak istersiniz?",
+                "Yün Sat", "1");
+
+            if (string.IsNullOrWhiteSpace(input)) return;
+
+            if (!int.TryParse(input, out int quantityToSell))
+            {
+                MessageBox.Show("Geçerli bir sayı giriniz.");
+                return;
+            }
+
+            if (quantityToSell > unsoldCount)
+            {
+                MessageBox.Show("Stokta bu kadar yün yok!");
+                return;
+            }
+
+            decimal unitPrice = 15;
+            int soldCount = DatabaseHelper.SellProducts(productTypeId, quantityToSell);
+            decimal totalEarned = soldCount * unitPrice;
+
+            DatabaseHelper.AddCash(totalEarned);
+            UpdateSheepProductCountLabel();
+            UpdateCashLabel();
+
+            MessageBox.Show($"{soldCount} yün satıldı. Kasaya {totalEarned:C} eklendi.");
+        }
+
+
+        private void UpdateSheepProductCountLabel_Click(object sender, EventArgs e)
+        {
+            int count = DatabaseHelper.GetUnsoldProductCount(3); // 3 = Yün
+            lblSheepProductCount.Text = $"Yün: {count}";
+        }
+
+        private void cbSheepGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadSheepInfo()
+        {
+            int? sheepId = DatabaseHelper.GetAliveSheepId();
+            if (sheepId.HasValue)
+            {
+                int age = DatabaseHelper.GetAnimalAge(sheepId.Value);
+                string gender = DatabaseHelper.GetAnimalGender(sheepId.Value);
+
+                txtSheepAge.Text = age.ToString();
+                cbSheepGender.SelectedItem = gender;
+                cbSheepGender.Enabled = false;
+                btnSheepWool.Enabled = true;
+                btnSheepSell.Enabled = true;
+            }
+            else
+            {
+                txtSheepAge.Text = "Yok";
+                cbSheepGender.SelectedIndex = 0; // "Seçiniz"
+                cbSheepGender.Enabled = true;
+                btnSheepWool.Enabled = false;
+                btnSheepSell.Enabled = false;
+            }
+
+            UpdateSheepProductCountLabel();
+        }
+
+        private void btnGooseBuy_Click(object sender, EventArgs e)
+        {
+            if (DatabaseHelper.HasAnyAliveGoose())
+            {
+                MessageBox.Show("Zaten canlı bir kazınız var! Önce onun ölmesini bekleyin.");
+                return;
+            }
+
+            decimal goosePrice = 100; // Örnek fiyat
+
+            if (!DatabaseHelper.HasEnoughCash(goosePrice))
+            {
+                MessageBox.Show("Yetersiz bakiye!");
+                return;
+            }
+
+            // Cinsiyet seçimi için MessageBox
+            DialogResult result = MessageBox.Show("Yeni kazın cinsiyeti ne olacak?\nEvet: Erkek\nHayır: Dişi",
+                "Cinsiyet Seçimi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            string gender = (result == DialogResult.Yes) ? "Erkek" : "Dişi";
+
+            // ComboBox'a yaz ve pasif yap
+            cbGooseGender.Text = gender;
+            cbGooseGender.Enabled = false;
+
+            Goose goose = new Goose
+            {
+                Age = 1,
+                Gender = gender,
+                SpeciesId = 4, // Kaz türü id'si
+                Lifespan = 150
+            };
+
+            DatabaseHelper.AddAnimal(goose);
+            DatabaseHelper.DeductCash(goosePrice);
+
+            UpdateCashLabel();
+            UpdateGooseAgeLabel();
+
+            MessageBox.Show("Yeni kaz satın alındı!");
+
+            btnGooseFeed.Enabled = true;
+            btnGooseSell.Enabled = true;
+
+            // Kaz alımı butonunu pasif yap
+            btnGooseBuy.Enabled = false;
+
+            // Yanıp sönme durdurulsun
+            gooseBuyBlinkTimer.Stop();
+            btnGooseBuy.BackColor = SystemColors.Control;
+        }
+
+        private void UpdateGooseAgeLabel()
+        {
+            int? gooseId = DatabaseHelper.GetAliveGooseId();
+            if (gooseId.HasValue)
+            {
+                int age = DatabaseHelper.GetAnimalAge(gooseId.Value);
+                txtGooseAge.Text = $"{age}";
+            }
+            else
+            {
+                txtGooseAge.Text = "Kaz Yok";
+            }
+        }
+
+        private void GooseBuyBlinkTimer_Tick(object sender, EventArgs e)
+        {
+            btnGooseSell.BackColor = btnGooseSell.BackColor == Color.Red ? SystemColors.Control : Color.Red;
+        }
+
+        private async void btnGooseFeed_Click(object sender, EventArgs e)
+        {
+            string selectedGender = cbGooseGender.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedGender) || selectedGender == "Seçiniz")
+            {
+                MessageBox.Show("Lütfen kazın cinsiyetini seçin, besleme yapılamaz.");
+                return;
+            }
+
+            int gooseId = DatabaseHelper.GetAliveGooseId() ?? -1;
+
+            if (gooseId == -1)
+            {
+                MessageBox.Show("Canlı kaz yok! Lütfen yeni bir kaz satın alın.");
+                btnGooseFeed.Enabled = false;
+                gooseBuyBlinkTimer.Start();
+                return;
+            }
+
+            // Besleme animasyonu
+            pbGooseProduction.Value = 0;
+            for (int i = 0; i <= 100; i++)
+            {
+                pbGooseProduction.Value = i;
+                await Task.Delay(70);
+            }
+
+            // Ürün ekle ve yaş artır
+            DatabaseHelper.AddProduct(gooseId, 4); // Kaz ürünü
+            DatabaseHelper.IncrementGooseProductCount(gooseId); // Bu fonksiyonu veritabanında yazmalısınız
+
+            int age = DatabaseHelper.GetAnimalAge(gooseId);
+            if (age >= 10)
+            {
+                DatabaseHelper.KillAnimal(gooseId);
+                MessageBox.Show("Kaz 10 yaşına ulaştı ve öldü. Yeni kaz almanız gerekiyor.");
+
+                txtGooseAge.Text = "Yok";
+                btnGooseFeed.Enabled = false;
+                gooseBuyBlinkTimer.Start();
+
+                // Cinsiyet seçimi ve yeni kaz alımı
+                DialogResult result = MessageBox.Show("Yeni kazın cinsiyeti ne olacak?\nEvet: Erkek\nHayır: Dişi",
+                    "Cinsiyet Seçimi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                string gender = (result == DialogResult.Yes) ? "Erkek" : "Dişi";
+
+                cbGooseGender.Text = gender;
+                cbGooseGender.Enabled = false;
+
+                Goose newGoose = new Goose
+                {
+                    Age = 1,
+                    Gender = gender,
+                    SpeciesId = 4,
+                    Lifespan = 150
+                };
+
+                DatabaseHelper.AddAnimal(newGoose);
+                UpdateGooseAgeLabel();
+                UpdateGooseProductCountLabel();
+                MessageBox.Show("Yeni kaz başarıyla oluşturuldu.");
+
+                btnGooseFeed.Enabled = true;
+                gooseBuyBlinkTimer.Stop();
+                btnGooseBuy.Enabled = false;
+                btnGooseBuy.BackColor = SystemColors.Control;
+            }
+
+            UpdateGooseProductCountLabel();
+            UpdateGooseAgeLabel();
+        }
+
+        private void UpdateGooseProductCountLabel()
+        {
+            int count = DatabaseHelper.GetUnsoldProductCount(4); // 4 = kaz ürünü ID'si
+            lblGooseProductCount.Text = $"Ürün: {count}";
+        }
     }
 }
+
