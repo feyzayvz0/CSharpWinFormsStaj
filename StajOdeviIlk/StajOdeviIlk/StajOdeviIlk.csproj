@@ -130,5 +130,11 @@
   <ItemGroup>
     <None Include="Resources\btn.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tavuk.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kasax.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

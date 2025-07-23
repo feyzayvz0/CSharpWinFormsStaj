@@ -83,6 +83,16 @@ namespace StajOdeviIlk.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
         /// </summary>
+        internal static System.Drawing.Bitmap kasax {
+            get {
+                object obj = ResourceManager.GetObject("kasax", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
         internal static System.Drawing.Bitmap kaz {
             get {
                 object obj = ResourceManager.GetObject("kaz", resourceCulture);
@@ -97,6 +107,16 @@ namespace StajOdeviIlk.Properties {
             get {
                 object obj = ResourceManager.GetObject("koyun", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   (Simge) öğesine benzeyen System.Drawing.Icon türünde yerelleştirilmiş bir kaynak arar.
+        /// </summary>
+        internal static System.Drawing.Icon tavuk {
+            get {
+                object obj = ResourceManager.GetObject("tavuk", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
