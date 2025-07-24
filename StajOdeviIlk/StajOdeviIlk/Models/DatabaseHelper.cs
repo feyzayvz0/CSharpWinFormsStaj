@@ -1,6 +1,7 @@
 ﻿using StajOdeviIlk.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,6 @@ namespace StajOdeviIlk.Helpers
             return new SqlConnection(ConnectionString);
         }
 
-        // 🐮 Tür Listesi
         public static List<AnimalSpecies> GetAnimalSpecies()
         {
             List<AnimalSpecies> speciesList = new List<AnimalSpecies>();
@@ -42,7 +42,6 @@ namespace StajOdeviIlk.Helpers
             return speciesList;
         }
 
-        // 🐔 Hayvan Ekle
         public static void AddAnimal(Animal animal)
         {
             if (animal.SpeciesId == 1 && HasAnyAliveChicken()) return; // Tavuksa ve zaten canlı varsa ekleme
@@ -61,7 +60,6 @@ namespace StajOdeviIlk.Helpers
             }
         }
 
-        // 🐣 Canlı Tavuk ID’si getir
         public static int GetAliveChickenId()
         {
             using (SqlConnection conn = GetConnection())
@@ -82,7 +80,7 @@ namespace StajOdeviIlk.Helpers
             {
                 conn.Open();
 
-               
+
                 string insertQuery = @"
             INSERT INTO Products (AnimalId, ProductTypeId, Quantity, ProductionDate, IsSold)
             VALUES (@AnimalId, @ProductTypeId, 1, GETDATE(), 0)";
@@ -109,7 +107,6 @@ namespace StajOdeviIlk.Helpers
         }
 
 
-        // 📦 Satılmamış ürün sayısı
         public static int GetUnsoldProductCount(int productTypeId)
         {
             using (SqlConnection conn = GetConnection())
@@ -123,7 +120,6 @@ namespace StajOdeviIlk.Helpers
             }
         }
 
-        // 🛒 Ürünleri sat, satış adedi döndür
         public static int SellProducts(int ProductTypeId, int quantity)
         {
             using (var conn = GetConnection())
@@ -140,12 +136,11 @@ namespace StajOdeviIlk.Helpers
                     cmd.Parameters.AddWithValue("@Quantity", quantity);
                     cmd.Parameters.AddWithValue("@ProductTypeId", ProductTypeId);
 
-                    return cmd.ExecuteNonQuery(); // Satılan ürün sayısı
+                    return cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        // 💰 Kasa: Para Ekle
         public static void AddCash(decimal amount)
         {
             using (SqlConnection conn = GetConnection())
@@ -157,7 +152,6 @@ namespace StajOdeviIlk.Helpers
             }
         }
 
-        // 💸 Kasa: Para Düş
         public static void DeductCash(decimal amount)
         {
             using (var conn = GetConnection())
@@ -172,7 +166,6 @@ namespace StajOdeviIlk.Helpers
                 }
             }
         }
-        // 🧮 Kasada yeterli para var mı?
         public static bool HasEnoughCash(decimal amount)
         {
             using (SqlConnection conn = GetConnection())
@@ -187,7 +180,6 @@ namespace StajOdeviIlk.Helpers
             }
         }
 
-        // 💰 Toplam Kasa Değerini Döndür (İstatistik için)
         public static decimal GetTotalCash()
         {
             using (var conn = GetConnection())
@@ -307,7 +299,6 @@ namespace StajOdeviIlk.Helpers
             {
                 conn.Open();
                 string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
-                // Burada SpeciesId = 3 diyelim, inek türü için (veritabanındaki id'yi kontrol et)
                 using (var cmd = new SqlCommand(query, conn))
                 {
                     object result = cmd.ExecuteScalar();
@@ -320,7 +311,7 @@ namespace StajOdeviIlk.Helpers
             using (var conn = GetConnection())
             {
                 conn.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1"; // 3: İnek türü ID'si
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1";
                 using (var cmd = new SqlCommand(query, conn))
                 {
                     int count = (int)cmd.ExecuteScalar();
@@ -333,7 +324,7 @@ namespace StajOdeviIlk.Helpers
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1";
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1"; // Koyun ID'si 3
                 SqlCommand command = new SqlCommand(query, connection);
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
@@ -344,7 +335,7 @@ namespace StajOdeviIlk.Helpers
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 3 AND IsAlive = 1";
+                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1"; // Koyun ID'si 3'ten 4'e değişti
                 SqlCommand command = new SqlCommand(query, connection);
                 object result = command.ExecuteScalar();
                 if (result != null)
@@ -357,25 +348,27 @@ namespace StajOdeviIlk.Helpers
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "UPDATE Animals SET WoolProductionCount = ISNULL(WoolProductionCount, 0) + 1 WHERE Id = @Id AND SpeciesId = 3"; // 3 = koyun
+                string query = "UPDATE Animals SET WoolProductionCount = ISNULL(WoolProductionCount, 0) + 1 WHERE Id = @Id AND SpeciesId = 3"; // Koyun ID'si 3
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Id", sheepId);
                 command.ExecuteNonQuery();
             }
         }
 
+
         public static int GetWoolCount(int sheepId)
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "SELECT ISNULL(WoolProductionCount, 0) FROM Animals WHERE Id = @Id AND SpeciesId = 3"; // 3 = koyun
+                string query = "SELECT ISNULL(WoolProductionCount, 0) FROM Animals WHERE Id = @Id AND SpeciesId = 3"; // Koyun ID'si 3
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Id", sheepId);
                 object result = command.ExecuteScalar();
                 return result != null ? Convert.ToInt32(result) : 0;
             }
         }
+
         public static string GetAnimalGender(int animalId)
         {
             string gender = null;
@@ -405,19 +398,18 @@ namespace StajOdeviIlk.Helpers
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1"; // 4 = kaz türü
+                string query = "SELECT COUNT(*) FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1"; // Kaz ID'si 4
                 SqlCommand command = new SqlCommand(query, connection);
                 int count = (int)command.ExecuteScalar();
                 return count > 0;
             }
         }
-
         public static int? GetAliveGooseId()
         {
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
                 connection.Open();
-                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1";
+                string query = "SELECT TOP 1 Id FROM Animals WHERE SpeciesId = 4 AND IsAlive = 1"; // Kaz ID'si 4
                 SqlCommand command = new SqlCommand(query, connection);
                 object result = command.ExecuteScalar();
                 if (result != null)
@@ -431,24 +423,21 @@ namespace StajOdeviIlk.Helpers
             {
                 connection.Open();
 
-                // 1. Mevcut üretim sayısını al
-                string selectQuery = "SELECT FeatherProductionCount FROM Animals WHERE Id = @id AND SpeciesId = 4";
+                string selectQuery = "SELECT FeatherProductionCount FROM Animals WHERE Id = @id AND SpeciesId = 4"; // Kaz ID'si 4
                 SqlCommand selectCommand = new SqlCommand(selectQuery, connection);
                 selectCommand.Parameters.AddWithValue("@id", gooseId);
 
                 int currentCount = Convert.ToInt32(selectCommand.ExecuteScalar());
 
-                // 2. FeatherProductionCount +1
-                string updateFeatherQuery = "UPDATE Animals SET FeatherProductionCount = FeatherProductionCount + 1 WHERE Id = @id AND SpeciesId = 4";
+                string updateFeatherQuery = "UPDATE Animals SET FeatherProductionCount = FeatherProductionCount + 1 WHERE Id = @id AND SpeciesId = 4"; // Kaz ID'si 4
                 SqlCommand updateCommand = new SqlCommand(updateFeatherQuery, connection);
                 updateCommand.Parameters.AddWithValue("@id", gooseId);
                 updateCommand.ExecuteNonQuery();
 
-                // 3. Yeni değer 3'ün katı mı? Evetse yaşı +1 yap
                 int newCount = currentCount + 1;
                 if (newCount % 3 == 0)
                 {
-                    string ageUpdateQuery = "UPDATE Animals SET Age = Age + 1 WHERE Id = @id AND SpeciesId = 4";
+                    string ageUpdateQuery = "UPDATE Animals SET Age = Age + 1 WHERE Id = @id AND SpeciesId = 4"; // Kaz ID'si 4
                     SqlCommand ageCommand = new SqlCommand(ageUpdateQuery, connection);
                     ageCommand.Parameters.AddWithValue("@id", gooseId);
                     ageCommand.ExecuteNonQuery();
@@ -456,11 +445,64 @@ namespace StajOdeviIlk.Helpers
             }
         }
 
+        public static void UpdateAnimalGender(int animalId, string gender)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Animals SET Gender = @Gender WHERE Id = @Id", conn);
+                cmd.Parameters.AddWithValue("@Gender", gender);
+                cmd.Parameters.AddWithValue("@Id", animalId);
+                cmd.ExecuteNonQuery();
+            }
+        }
 
-
-
-
-
+        // 📊 İstatistikleri Getir (Güncellenmiş)
+        public static DataTable GetStatistics()
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection conn = GetConnection())
+            {
+                conn.Open();
+                string query = @"
+                    SELECT
+                        ASp.Name AS [Animal Type],
+                        COUNT(CASE WHEN A.IsAlive = 1 THEN A.Id ELSE NULL END) AS [Alive Animals], -- Geri geldi
+                        COUNT(CASE WHEN A.IsAlive = 0 THEN A.Id ELSE NULL END) AS [Dead Animals],  -- Geri geldi
+                        ISNULL(SUM(CASE WHEN ASp.Name = 'Tavuk' THEN A.EggProductionCount ELSE 0 END), 0) AS [Total Eggs Produced],
+                        ISNULL(SUM(CASE WHEN ASp.Name = 'İnek' THEN A.MilkProductionCount ELSE 0 END), 0) AS [Total Milk Produced],
+                        ISNULL(SUM(CASE WHEN ASp.Name = 'Koyun' THEN A.WoolProductionCount ELSE 0 END), 0) AS [Total Wool Produced],
+                        ISNULL(SUM(CASE WHEN ASp.Name = 'Kaz' THEN A.FeatherProductionCount ELSE 0 END), 0) AS [Total Feathers Produced],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Egg' AND P.IsSold = 0 THEN P.Quantity ELSE 0 END), 0) AS [Eggs In Stock],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Egg' AND P.IsSold = 1 THEN P.Quantity ELSE 0 END), 0) AS [Eggs Sold],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Milk' AND P.IsSold = 0 THEN P.Quantity ELSE 0 END), 0) AS [Milk In Stock],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Milk' AND P.IsSold = 1 THEN P.Quantity ELSE 0 END), 0) AS [Milk Sold],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Wool' AND P.IsSold = 0 THEN P.Quantity ELSE 0 END), 0) AS [Wool In Stock],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Wool' AND P.IsSold = 1 THEN P.Quantity ELSE 0 END), 0) AS [Wool Sold],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Feather' AND P.IsSold = 0 THEN P.Quantity ELSE 0 END), 0) AS [Feathers In Stock],
+                        ISNULL(SUM(CASE WHEN PT.Name = 'Feather' AND P.IsSold = 1 THEN P.Quantity ELSE 0 END), 0) AS [Feathers Sold],
+                        (SELECT ISNULL(SUM(Amount), 0) FROM CashRegister WHERE Amount > 0) AS [Total Earned Cash]
+                    FROM
+                        AnimalSpecies ASp
+                    LEFT JOIN
+                        Animals A ON ASp.Id = A.SpeciesId
+                    LEFT JOIN
+                        Products P ON A.Id = P.AnimalId
+                    LEFT JOIN
+                        ProductTypes PT ON P.ProductTypeId = PT.Id
+                    GROUP BY
+                        ASp.Name
+                    ORDER BY
+                        ASp.Name;
+                ";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+            }
+            return dt;
+        }
 
     }
 }

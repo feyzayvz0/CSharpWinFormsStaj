@@ -9,3 +9,4 @@ C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\bin\Debug\StajOdeviIl
 C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.exe
 C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.pdb
 C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.exe.config
+C:\Users\feyza\source\repos\Staj\StajOdeviIlk\StajOdeviIlk\obj\Debug\StajOdeviIlk.StatisticsForm.resources
