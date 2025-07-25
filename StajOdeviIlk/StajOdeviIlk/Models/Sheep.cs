@@ -11,18 +11,18 @@ namespace StajOdeviIlk.Models
     {
         public override Product Produce()
         {
-            // Örnek: yeni bir ürün (yün) üret
+           
             return new Product
             {
                 AnimalId = this.Id,
-                ProductTypeId = 3, // 3 diyelim yün ürün tipi id'si
+                ProductTypeId = 3, 
                 Quantity = 1
             };
         }
 
         public override void AgeUp()
         {
-            base.AgeUp(); // yaş artışı
+            base.AgeUp(); 
 
             if (Age >= Lifespan)
                 IsAlive = false;

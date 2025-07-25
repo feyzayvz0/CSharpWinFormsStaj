@@ -13,7 +13,7 @@ namespace StajOdeviIlk.Models
         {
             return new Product
             {
-                ProductTypeId = 1, // 1 = Egg (veritabanındaki ProductTypes tablosuna göre)
+                ProductTypeId = 1, 
                 Quantity = 1,
                 ProductionDate = DateTime.Now
             };

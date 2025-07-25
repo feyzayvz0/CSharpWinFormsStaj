@@ -40,7 +40,7 @@
             this.dataGridViewStatistics.Name = "dataGridViewStatistics";
             this.dataGridViewStatistics.RowHeadersWidth = 51;
             this.dataGridViewStatistics.RowTemplate.Height = 24;
-            this.dataGridViewStatistics.Size = new System.Drawing.Size(1078, 288);
+            this.dataGridViewStatistics.Size = new System.Drawing.Size(1091, 203);
             this.dataGridViewStatistics.TabIndex = 0;
             // 
             // StatisticsForm
@@ -48,7 +48,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::StajOdeviIlk.Properties.Resources.arkaplan;
-            this.ClientSize = new System.Drawing.Size(1115, 372);
+            this.ClientSize = new System.Drawing.Size(1115, 328);
             this.Controls.Add(this.dataGridViewStatistics);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StatisticsForm";

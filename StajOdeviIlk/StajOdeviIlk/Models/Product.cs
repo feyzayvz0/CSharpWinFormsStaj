@@ -10,7 +10,7 @@ namespace StajOdeviIlk.Models
     {
         public int Id { get; set; }
         public int AnimalId { get; set; }
-        public int ProductTypeId { get; set; } // BU SATIRI EKLE!
+        public int ProductTypeId { get; set; } 
         public int Quantity { get; set; }
         public DateTime ProductionDate { get; set; }
         public bool IsSold { get; set; }
