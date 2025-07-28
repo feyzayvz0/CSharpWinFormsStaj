@@ -66,6 +66,8 @@
     <Compile Include="Models\Sheep.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AnimalRepository.cs" />
+    <Compile Include="Repository\IAnimalRepository.cs" />
     <Compile Include="StatisticsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +149,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\arkaplan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
