@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 
 namespace StajOdeviIlk.Helpers
@@ -13,21 +14,14 @@ namespace StajOdeviIlk.Helpers
 {
 
     public static class DatabaseHelper
-
     {
-
-        public static string ConnectionString = @"Data Source=FEYZA;Initial Catalog=StajOdeviIlk;Integrated Security=True;TrustServerCertificate=True";
-
-
+        public static string ConnectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
         public static SqlConnection GetConnection()
-
         {
-
             return new SqlConnection(ConnectionString);
-
         }
-
+    
 
 
         public static List<AnimalSpecies> GetAnimalSpecies()
@@ -143,6 +137,20 @@ namespace StajOdeviIlk.Helpers
 
         }
 
+        public static void DecreaseCash(decimal amount)
+        {
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+
+            {
+                connection.Open();
+
+                string query = "INSERT INTO CashRegister (Amount, Date) VALUES (@Amount, @Date)";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Amount", -amount); // Para çıkışı
+                command.Parameters.AddWithValue("@Date", DateTime.Now);
+                command.ExecuteNonQuery();
+            }
+        }
 
 
         public static void AddProduct(int animalId, int productTypeId)

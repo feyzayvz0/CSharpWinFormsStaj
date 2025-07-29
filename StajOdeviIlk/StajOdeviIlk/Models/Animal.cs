@@ -21,7 +21,8 @@ using System.Threading.Tasks;
             Age++;
         }
 
-        public abstract void Produce();
+        public abstract Product Produce();
+
     }
 }
 
