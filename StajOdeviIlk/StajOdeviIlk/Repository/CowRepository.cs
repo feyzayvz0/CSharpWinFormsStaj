@@ -30,7 +30,7 @@ namespace StajOdeviIlk.Repository
                 cmd.ExecuteNonQuery();
             }
         }
-
+     
         public Cow GetAliveCow()
         {
             using (SqlConnection conn = new SqlConnection(_connectionString))
@@ -120,5 +120,50 @@ namespace StajOdeviIlk.Repository
 
             return products;
         }
+
+
+        public void IncrementMilkCount(int cowId)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                // Süt sayısını artır
+                string updateMilkCount = "UPDATE Animals SET MilkProductionCount = ISNULL(MilkProductionCount, 0) + 1 WHERE Id = @Id AND SpeciesId = 2";
+                using (var cmd = new SqlCommand(updateMilkCount, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", cowId);
+                    cmd.ExecuteNonQuery();
+                }
+
+                // Süt sayısını çek ve kontrol et
+                string selectMilk = "SELECT MilkProductionCount FROM Animals WHERE Id = @Id AND SpeciesId = 2";
+                using (var cmd = new SqlCommand(selectMilk, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", cowId);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count % 2 == 0)
+                    {
+                        string ageUpdate = "UPDATE Animals SET Age = Age + 1 WHERE Id = @Id AND SpeciesId = 2";
+                        using (var ageCmd = new SqlCommand(ageUpdate, conn))
+                        {
+                            ageCmd.Parameters.AddWithValue("@Id", cowId);
+                            ageCmd.ExecuteNonQuery();
+                        }
+                    }
+                }
+            }
+        }
+
+        public int GetAnimalAge(int cowId)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new SqlCommand("SELECT Age FROM Animals WHERE Id = @Id", conn);
+                cmd.Parameters.AddWithValue("@Id", cowId);
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
+        }
+
     }
 }

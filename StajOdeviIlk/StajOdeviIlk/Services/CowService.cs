@@ -12,25 +12,43 @@ namespace StajOdeviIlk.Services
     {
         private readonly ICowRepository _cowRepository;
         private readonly IProductRepository _productRepository;
+        private readonly ICashRepository _cashRepository;
 
-        public CowService(ICowRepository cowRepository, IProductRepository productRepository)
+        public CowService(ICowRepository cowRepository, IProductRepository productRepository, ICashRepository cashRepository)
         {
             _cowRepository = cowRepository;
             _productRepository = productRepository;
+            _cashRepository = cashRepository;
         }
 
-        public void BuyCow(string gender)
+        public int SellCowProducts(int quantity, decimal unitPrice)
         {
+            int soldCount = _productRepository.SellProducts(2, quantity); // 2: süt
+            _cashRepository.AddCash(soldCount * unitPrice);
+            return soldCount;
+        }
+
+        public int GetUnsoldProductCount()
+        {
+            return _productRepository.GetUnsoldProductCount(2);
+        }
+
+        public void BuyCow(string gender, decimal price)
+        {
+            if (!_cashRepository.HasEnoughCash(price))
+                throw new InvalidOperationException("Yetersiz bakiye!");
+
             var cow = new Cow
             {
-                SpeciesId = 2, // Cow
-                Age = 0,
+                SpeciesId = 2,
+                Age = 1,
                 Gender = gender,
-                Lifespan = 12,
+                Lifespan = 10, // 10 yaşında ölecek!
                 IsAlive = true
             };
 
             _cowRepository.Add(cow);
+            _cashRepository.DecreaseCash(price);
         }
 
         public Cow GetAliveCow()
@@ -38,41 +56,33 @@ namespace StajOdeviIlk.Services
             return _cowRepository.GetAliveCow();
         }
 
-        public void FeedCow()
+        /// <summary>
+        /// Süt üretimi - her 2 üretimde yaş +1, 10 yaşında ölüm!
+        /// </summary>
+        public bool ProduceMilk()
         {
             var cow = _cowRepository.GetAliveCow();
-            if (cow == null) return;
+            if (cow == null)
+                return false;
 
-            _cowRepository.AgeUp(cow.Id);
+            // 1. Sütü üret, Product'a ekle
+            var milk = cow.Produce();
+            milk.AnimalId = cow.Id;
+            milk.ProductionDate = DateTime.Now;
+            milk.IsSold = false;
+            _productRepository.Add(milk);
 
-            cow.Age++;
-            if (cow.Age >= cow.Lifespan)
+            // 2. Süt sayısını ve gerekiyorsa yaşı artır
+            _cowRepository.IncrementMilkCount(cow.Id); // Her 2 süt = yaş +1 (bu işlemi repositoryde ayarladık!)
+
+            // 3. Yaşı çek ve ölüm kontrolü
+            int age = _cowRepository.GetAnimalAge(cow.Id);
+            if (age >= 10)
             {
                 _cowRepository.Kill(cow.Id);
+                return true; // öldü
             }
-        }
-
-        public Product Produce()
-        {
-            var cow = _cowRepository.GetAliveCow();
-            if (cow == null) return null;
-
-            return cow.Produce(); // Bu sadece Product nesnesi döner, DB’ye ekleme işlemi yapılmaz!
-        }
-
-        public Product ProduceAndSave()
-        {
-            var cow = _cowRepository.GetAliveCow();
-            if (cow == null) return null;
-
-            var product = cow.Produce(); // Product nesnesi oluşturur
-            if (product != null)
-            {
-                product.AnimalId = cow.Id; // Ürünü ilgili hayvan ile ilişkilendir
-                product.ProductionDate = DateTime.Now;
-                _productRepository.Add(product); // Ürünü DB'ye ekle
-            }
-            return product;
+            return false; // yaşıyor
         }
 
         public List<Product> GetCowProducts()

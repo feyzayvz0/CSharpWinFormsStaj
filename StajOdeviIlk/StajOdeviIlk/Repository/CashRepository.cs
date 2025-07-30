@@ -23,22 +23,24 @@ namespace StajOdeviIlk.Repositories
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE CashRegister SET Balance = Balance + @Amount", connection);
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO CashRegister (Amount, Date) VALUES (@Amount, @Date)", connection);
                 cmd.Parameters.AddWithValue("@Amount", amount);
+                cmd.Parameters.AddWithValue("@Date", DateTime.Now);
                 cmd.ExecuteNonQuery();
             }
         }
+
         public void DecreaseCash(decimal amount)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
-
-                string query = "INSERT INTO CashRegister (Amount, Date) VALUES (@Amount, @Date)";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Amount", -amount); // Para çıkışı
-                command.Parameters.AddWithValue("@Date", DateTime.Now);
-                command.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand(
+                    "INSERT INTO CashRegister (Amount, Date) VALUES (@Amount, @Date)", connection);
+                cmd.Parameters.AddWithValue("@Amount", -amount); // Negatif olarak ekle!
+                cmd.Parameters.AddWithValue("@Date", DateTime.Now);
+                cmd.ExecuteNonQuery();
             }
         }
 

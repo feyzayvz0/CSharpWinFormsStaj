@@ -1,4 +1,4 @@
-﻿using StajOdeviIlk.Helpers;
+﻿
 using StajOdeviIlk.Models;
 using StajOdeviIlk.Repository;
 using System;
@@ -12,9 +12,16 @@ namespace StajOdeviIlk.Repositories
 {
     public class AnimalRepository : IAnimalRepository
     {
+        private readonly string _connectionString;
+
+        public AnimalRepository(string connectionString)
+        {
+            _connectionString = connectionString;
+        }
+
         public void AddAnimal(Animal animal)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("INSERT INTO Animals (SpeciesId, Age, Gender, Lifespan, IsAlive) VALUES (@SpeciesId, @Age, @Gender, @Lifespan, 1)", conn);
@@ -25,10 +32,9 @@ namespace StajOdeviIlk.Repositories
                 cmd.ExecuteNonQuery();
             }
         }
-
         public void KillAnimal(int animalId)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("UPDATE Animals SET IsAlive = 0 WHERE Id = @id", conn);
@@ -39,7 +45,7 @@ namespace StajOdeviIlk.Repositories
 
         public void IncrementAge(int animalId)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("UPDATE Animals SET Age = Age + 1 WHERE Id = @Id", conn);
@@ -50,7 +56,7 @@ namespace StajOdeviIlk.Repositories
 
         public int GetAnimalAge(int animalId)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT Age FROM Animals WHERE Id = @Id", conn);
@@ -61,7 +67,7 @@ namespace StajOdeviIlk.Repositories
 
         public string GetAnimalGender(int animalId)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT Gender FROM Animals WHERE Id = @Id", conn);
@@ -72,7 +78,7 @@ namespace StajOdeviIlk.Repositories
 
         public void UpdateAnimalGender(int animalId, string gender)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("UPDATE Animals SET Gender = @Gender WHERE Id = @Id", conn);
@@ -84,7 +90,7 @@ namespace StajOdeviIlk.Repositories
 
         public bool HasAnyAliveAnimal(int speciesId)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT COUNT(*) FROM Animals WHERE SpeciesId = @SpeciesId AND IsAlive = 1", conn);
@@ -96,7 +102,7 @@ namespace StajOdeviIlk.Repositories
 
         public int? GetAliveAnimalId(int speciesId)
         {
-            using (var conn = DatabaseHelper.GetConnection())
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
                 var cmd = new SqlCommand("SELECT TOP 1 Id FROM Animals WHERE SpeciesId = @SpeciesId AND IsAlive = 1", conn);

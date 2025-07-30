@@ -1,5 +1,5 @@
-﻿using StajOdeviIlk.Helpers;
-using StajOdeviIlk.Models;
+﻿using StajOdeviIlk.Models;
+using StajOdeviIlk.Repositories;
 using StajOdeviIlk.Repository;
 using System;
 using System.Collections.Generic;
@@ -12,10 +12,12 @@ namespace StajOdeviIlk.Services
     public class AnimalService : IAnimalService
     {
         private readonly IAnimalRepository _animalRepository;
+        private readonly ICashRepository _cashRepository;
 
-        public AnimalService(IAnimalRepository animalRepository)
+        public AnimalService(IAnimalRepository animalRepository, ICashRepository cashRepository)
         {
             _animalRepository = animalRepository;
+            _cashRepository = cashRepository;
         }
 
         public bool CanBuyAnimal(int speciesId)
@@ -23,16 +25,18 @@ namespace StajOdeviIlk.Services
             return !_animalRepository.HasAnyAliveAnimal(speciesId);
         }
 
-        public async Task<(bool IsSuccess, string Message)> BuyAnimalAsync(Animal animal, decimal price)
+        public Task<(bool IsSuccess, string Message)> BuyAnimalAsync(Animal animal, decimal price)
         {
-            if (!DatabaseHelper.HasEnoughCash(price))
-                return (false, "Yetersiz bakiye!");
+            if (!_cashRepository.HasEnoughCash(price))
+                return Task.FromResult((false, "Yetersiz bakiye!"));
 
             _animalRepository.AddAnimal(animal);
-            DatabaseHelper.DeductCash(price);
+            _cashRepository.DecreaseCash(price);
 
-            return (true, "Yeni hayvan başarıyla satın alındı.");
+            return Task.FromResult((true, "Yeni hayvan başarıyla satın alındı."));
         }
+
+
 
         public int? GetAliveAnimalId(int speciesId)
         {
@@ -59,30 +63,27 @@ namespace StajOdeviIlk.Services
             _animalRepository.IncrementAge(animalId);
         }
 
-        public async Task<(bool IsSuccess, bool AnimalDied, string Message)> FeedAnimalAsync(int speciesId, string gender)
+        public Task<(bool IsSuccess, bool AnimalDied, string Message)> FeedAnimalAsync(int speciesId, string gender)
         {
             var animalId = _animalRepository.GetAliveAnimalId(speciesId);
             if (animalId == null)
-                return (false, false, "Canlı hayvan yok! Yeni bir hayvan satın alın.");
+                return Task.FromResult((false, false, "Canlı hayvan yok! Yeni bir hayvan satın alın."));
 
             string actualGender = _animalRepository.GetAnimalGender(animalId.Value);
             if (!string.Equals(actualGender, gender, StringComparison.OrdinalIgnoreCase))
-                return (false, false, "Hayvanın cinsiyeti seçilenle uyuşmuyor.");
+                return Task.FromResult((false, false, "Hayvanın cinsiyeti seçilenle uyuşmuyor."));
 
-            // Ürün ekleme
-            DatabaseHelper.AddProduct(animalId.Value, speciesId);
-
-            // Yaşı artır
             _animalRepository.IncrementAge(animalId.Value);
 
             int age = _animalRepository.GetAnimalAge(animalId.Value);
             if (age >= 10)
             {
                 _animalRepository.KillAnimal(animalId.Value);
-                return (true, true, "Hayvan 10 yaşına ulaştı ve öldü.");
+                return Task.FromResult((true, true, "Hayvan 10 yaşına ulaştı ve öldü."));
             }
 
-            return (true, false, "Besleme ve ürün toplama başarılı.");
+            return Task.FromResult((true, false, "Besleme ve ürün toplama başarılı."));
         }
+
     }
 }
