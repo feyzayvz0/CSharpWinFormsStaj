@@ -1,4 +1,5 @@
-﻿using StajOdeviIlk.Repositories;
+﻿using StajOdeviIlk.Models;
+using StajOdeviIlk.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -46,5 +47,32 @@ namespace StajOdeviIlk.Repository
                 }
             }
         }
+
+        public Chicken GetAliveChicken()
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                var cmd = new SqlCommand("SELECT TOP 1 * FROM Animals WHERE SpeciesId = 1 AND IsAlive = 1", conn);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Chicken
+                        {
+                            Id = Convert.ToInt32(reader["Id"]),
+                            SpeciesId = Convert.ToInt32(reader["SpeciesId"]),
+                            Age = Convert.ToInt32(reader["Age"]),
+                            Gender = reader["Gender"].ToString(),
+                            Lifespan = Convert.ToInt32(reader["Lifespan"]),
+                            IsAlive = Convert.ToBoolean(reader["IsAlive"])
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+
+
     }
 }

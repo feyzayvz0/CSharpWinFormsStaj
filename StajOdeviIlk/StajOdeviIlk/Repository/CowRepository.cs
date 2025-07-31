@@ -36,7 +36,7 @@ namespace StajOdeviIlk.Repository
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                var cmd = new SqlCommand("SELECT TOP 1 * FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1", conn); // 2 = Cow
+                var cmd = new SqlCommand("SELECT TOP 1 * FROM Animals WHERE SpeciesId = 2 AND IsAlive = 1", conn); 
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
@@ -122,34 +122,45 @@ namespace StajOdeviIlk.Repository
         }
 
 
+       
         public void IncrementMilkCount(int cowId)
         {
             using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                // Süt sayısını artır
                 string updateMilkCount = "UPDATE Animals SET MilkProductionCount = ISNULL(MilkProductionCount, 0) + 1 WHERE Id = @Id AND SpeciesId = 2";
                 using (var cmd = new SqlCommand(updateMilkCount, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", cowId);
                     cmd.ExecuteNonQuery();
                 }
+            }
+        }
 
-                // Süt sayısını çek ve kontrol et
-                string selectMilk = "SELECT MilkProductionCount FROM Animals WHERE Id = @Id AND SpeciesId = 2";
+        public int GetMilkCount(int cowId)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                string selectMilk = "SELECT ISNULL(MilkProductionCount, 0) FROM Animals WHERE Id = @Id AND SpeciesId = 2";
                 using (var cmd = new SqlCommand(selectMilk, conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", cowId);
-                    int count = Convert.ToInt32(cmd.ExecuteScalar());
-                    if (count % 2 == 0)
-                    {
-                        string ageUpdate = "UPDATE Animals SET Age = Age + 1 WHERE Id = @Id AND SpeciesId = 2";
-                        using (var ageCmd = new SqlCommand(ageUpdate, conn))
-                        {
-                            ageCmd.Parameters.AddWithValue("@Id", cowId);
-                            ageCmd.ExecuteNonQuery();
-                        }
-                    }
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public void IncrementAge(int cowId)
+        {
+            using (var conn = new SqlConnection(_connectionString))
+            {
+                conn.Open();
+                string ageUpdate = "UPDATE Animals SET Age = Age + 1 WHERE Id = @Id AND SpeciesId = 2";
+                using (var cmd = new SqlCommand(ageUpdate, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", cowId);
+                    cmd.ExecuteNonQuery();
                 }
             }
         }
@@ -164,6 +175,7 @@ namespace StajOdeviIlk.Repository
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+
 
     }
 }

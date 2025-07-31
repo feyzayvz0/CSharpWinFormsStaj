@@ -3,65 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilk\\stajodeviilk\\statisticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\statisticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|c:\\users\\feyza\\desktop\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilk\\stajodeviilk\\controllers\\farmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\controllers\\farmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\services\\gooseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\services\\gooseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\igooserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\igooserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilk\\stajodeviilk\\repository\\isheeprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\isheeprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\services\\sheepservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\services\\sheepservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\sheeprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\sheeprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\services\\chickenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\services\\chickenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\gooserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\gooserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\cashrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\cashrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|c:\\users\\feyza\\desktop\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\animalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\animalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\repository\\ianimalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\repository\\ianimalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\models\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\models\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\stajodeviilk\\services\\ianimalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|solutionrelative:stajodeviilk\\services\\ianimalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{85250F73-40C8-450E-A267-2B01DD1706BD}|StajOdeviIlk\\StajOdeviIlk.csproj|c:\\users\\feyza\\desktop\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,211 +24,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\Desktop\\Form1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Desktop\\Form1.cs",
               "ToolTip": "C:\\Users\\feyza\\Desktop\\Form1.cs",
               "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Form1.cs",
-              "ViewState": "AgIAAOwAAAAAAAAAAAAowPUAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwBcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T10:20:30.741Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\ProductRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\ProductRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\ProductRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\ProductRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIYAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T13:21:14.601Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ISheepRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\ISheepRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\ISheepRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\ISheepRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\ISheepRepository.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "StatisticsForm.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\StatisticsForm.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlk\\StatisticsForm.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\StatisticsForm.cs",
+              "RelativeToolTip": "StajOdeviIlk\\StatisticsForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T19:25:19.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FarmController.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Controllers\\FarmController.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Controllers\\FarmController.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Controllers\\FarmController.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Controllers\\FarmController.cs",
-              "ViewState": "AgIAAHkAAAAAAAAAAAAUwIIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T17:49:01.795Z",
+              "WhenOpened": "2025-07-31T20:50:03.831Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GooseService.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\GooseService.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Services\\GooseService.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\GooseService.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Services\\GooseService.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAowF4AAAAJAAAAAAAAAA==",
+              "Title": "CashRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\CashRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\CashRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\CashRepository.cs",
+              "RelativeToolTip": "StajOdeviIlk\\Repository\\CashRepository.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAvwCgAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T12:39:02.31Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GooseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\GooseRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\GooseRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\GooseRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\GooseRepository.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAmwGwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T12:38:32.398Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-31T20:49:42.012Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IGooseRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\IGooseRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\IGooseRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\IGooseRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\IGooseRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T12:38:08.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SheepService.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\SheepService.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Services\\SheepService.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\SheepService.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Services\\SheepService.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAkwG0AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T12:15:51.354Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SheepRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\SheepRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\SheepRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\SheepRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\SheepRepository.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAgwF0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T12:15:26.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ChickenService.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\ChickenService.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Services\\ChickenService.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\ChickenService.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Services\\ChickenService.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAiwEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T09:08:47.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\Desktop\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\Desktop\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\feyza\\Desktop\\Form1.Designer.cs",
-              "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Form1.Designer.cs",
-              "ViewState": "AgIAAGQBAAAAAAAAAAAnwHIBAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T12:48:11.132Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IAnimalService.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\IAnimalService.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Services\\IAnimalService.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Services\\IAnimalService.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Services\\IAnimalService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T10:51:26.12Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Animal.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Models\\Animal.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Models\\Animal.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Models\\Animal.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Models\\Animal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T13:13:50.527Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "IAnimalRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\IAnimalRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\IAnimalRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\IAnimalRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\IAnimalRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T13:20:07.455Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AnimalRepository.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\AnimalRepository.cs",
-              "RelativeDocumentMoniker": "StajOdeviIlk\\Repository\\AnimalRepository.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlk\\StajOdeviIlk\\Repository\\AnimalRepository.cs",
-              "RelativeToolTip": "StajOdeviIlk\\Repository\\AnimalRepository.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAwwEEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T13:27:39.853Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "Form1.cs [Tasar\u0131m]",
               "DocumentMoniker": "C:\\Users\\feyza\\Desktop\\Form1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\Desktop\\Form1.cs",
               "ToolTip": "C:\\Users\\feyza\\Desktop\\Form1.cs [Tasar\u0131m]",
               "RelativeToolTip": "..\\..\\..\\..\\Desktop\\Form1.cs [Tasar\u0131m]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-14T00:38:33.843Z",
-              "EditorCaption": " [Tasar\u0131m]"
+              "WhenOpened": "2025-07-14T00:38:33.843Z"
             }
           ]
         }

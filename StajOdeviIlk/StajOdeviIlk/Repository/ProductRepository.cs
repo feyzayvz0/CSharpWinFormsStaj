@@ -91,7 +91,6 @@ namespace StajOdeviIlk.Repository
 
         public int SellProducts(int productTypeId, int quantityToSell)
         {
-            // Basit bir örnek: Satılacak ürün sayısı kadar IsSold'u 1 yap
             using (SqlConnection conn = new SqlConnection(_connectionString))
             {
                 conn.Open();

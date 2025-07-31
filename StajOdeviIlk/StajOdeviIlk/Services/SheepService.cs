@@ -55,34 +55,35 @@ namespace StajOdeviIlk.Services
             if (sheep == null)
                 return false;
 
-            // 1. Yün üret ve Product tablosuna ekle
+        
             var wool = sheep.Produce();
+
             wool.AnimalId = sheep.Id;
             wool.ProductionDate = DateTime.Now;
             wool.IsSold = false;
             _productRepository.Add(wool);
 
-            // 2. WoolProductionCount artır
+         
             _sheepRepository.IncrementWoolCount(sheep.Id);
 
-            // 3. WoolProductionCount çek
+          
             int woolCount = _sheepRepository.GetWoolCount(sheep.Id);
 
-            // 4. Her 2 yünde bir yaş artır!
-            if (woolCount % 2 == 0)
+         
+            if (woolCount % 3 == 0)
             {
                 _sheepRepository.IncrementAge(sheep.Id);
             }
 
-            // 5. Yaşı güncel olarak kontrol et (test için 35!)
+           
             var age = _sheepRepository.GetAnimalAge(sheep.Id);
-            if (age >= 35) // <-- Burada değiştirdin
+            if (age >= 10) 
             {
                 _sheepRepository.KillAnimal(sheep.Id);
-                return true; // Koyun öldü
+                return true; 
             }
 
-            return false; // Koyun yaşıyor
+            return false; 
         }
 
 
@@ -103,13 +104,13 @@ namespace StajOdeviIlk.Services
         }
 
 
-        // Id'ye göre yaş döndürür
+       
         public int GetSheepAgeById(int sheepId)
         {
             return _sheepRepository.GetSheepAgeById(sheepId);
         }
 
-        // Id'ye göre cinsiyet döndürür
+        
         public string GetSheepGenderById(int sheepId)
         {
             return _sheepRepository.GetSheepGenderById(sheepId);

@@ -25,51 +25,47 @@ namespace StajOdeviIlk.Services
             _cashRepository = cashRepository;
         }
 
-        /// <summary>
-        /// Tavuğu besler, yumurta üretir, yaşını artırır ve gerekiyorsa öldürür.
-        /// </summary>
+       
         public bool FeedChicken()
         {
-            int? chickenId = _chickenRepository.GetAliveAnimalId(1); // 1 = Chicken
+            int? chickenId = _chickenRepository.GetAliveAnimalId(1); 
             if (!chickenId.HasValue)
-                return false; // Canlı tavuk yok!
+                return false; 
 
-            // Yeni ürün (yumurta) oluştur ve kaydet
+            
             var product = new Product
             {
                 AnimalId = chickenId.Value,
-                ProductTypeId = 1, // 1 = Yumurta
+                ProductTypeId = 1, 
                 Quantity = 1,
                 ProductionDate = DateTime.Now,
                 IsSold = false
             };
             _productRepository.Add(product);
 
-            // Yumurtlama sayısını artır
+         
             _chickenRepository.IncrementEggCount(chickenId.Value);
 
-            // Her 2 yumurtada bir yaş artır
+           
             int eggCount = _chickenRepository.GetEggCount(chickenId.Value);
-            if (eggCount % 2 == 0)
+            if (eggCount % 5 == 0)
             {
                 _chickenRepository.IncrementAge(chickenId.Value);
             }
 
-            // Yaş kontrolü
+            
             int age = _chickenRepository.GetAnimalAge(chickenId.Value);
             if (age >= 5)
             {
                 _chickenRepository.KillAnimal(chickenId.Value);
-                return false; // Tavuk öldü!
+                return false; 
             }
 
-            return true; // Tavuk yaşıyor!
+            return true; 
         }
 
 
-        /// <summary>
-        /// Yeni tavuk satın alır, bakiyeden düşer.
-        /// </summary>
+        
         public void BuyChicken(decimal price)
         {
             if (!_cashRepository.HasEnoughCash(price))
@@ -79,54 +75,48 @@ namespace StajOdeviIlk.Services
             {
                 Age = 1,
                 Gender = "Dişi",
-                SpeciesId = 1, // 1 = Chicken
-                Lifespan = 100
+                SpeciesId = 1, 
+                Lifespan = 10
             };
 
             _chickenRepository.AddAnimal(chicken);
             _cashRepository.DecreaseCash(price);
         }
 
-        /// <summary>
-        /// Satılmamış yumurta sayısını döner.
-        /// </summary>
+      
         public int GetUnsoldProductCount()
         {
-            return _productRepository.GetUnsoldProductCount(1); // 1 = Yumurta
+            return _productRepository.GetUnsoldProductCount(1); 
         }
 
-        /// <summary>
-        /// Tavuk ürünlerini satar ve kasaya gelir ekler.
-        /// </summary>
         public int SellChickenProducts(int quantity, decimal unitPrice)
         {
-            int soldCount = _productRepository.SellProducts(1, quantity); // 1 = Yumurta
+            int soldCount = _productRepository.SellProducts(1, quantity); 
             _cashRepository.AddCash(soldCount * unitPrice);
             return soldCount;
         }
 
-        /// <summary>
-        /// Kasa bakiyesini döner.
-        /// </summary>
+        
         public decimal GetCash()
         {
             return _cashRepository.GetTotalCash();
         }
 
-        /// <summary>
-        /// Canlı tavuk olup olmadığını kontrol eder.
-        /// </summary>
+        
         public bool HasAnyAliveChicken()
         {
-            return _chickenRepository.HasAnyAliveAnimal(1); // 1 = Chicken
+            return _chickenRepository.HasAnyAliveAnimal(1); 
         }
 
-        /// <summary>
-        /// Belirtilen miktarda paranın olup olmadığını kontrol eder.
-        /// </summary>
         public bool HasEnoughCash(decimal amount)
         {
             return _cashRepository.HasEnoughCash(amount);
         }
+
+        public Chicken GetAliveChicken()
+        {
+            return _chickenRepository.GetAliveChicken();
+        }
+
     }
 }

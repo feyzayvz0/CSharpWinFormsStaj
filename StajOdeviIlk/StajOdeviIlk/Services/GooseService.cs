@@ -49,25 +49,27 @@ namespace StajOdeviIlk.Services
             var goose = _gooseRepository.GetAliveGoose();
             if (goose == null) return false;
 
-            // 1. Tüy üret
+           
             var feather = goose.Produce();
+            feather.Quantity = 1;
             feather.AnimalId = goose.Id;
             feather.ProductionDate = DateTime.Now;
             feather.IsSold = false;
             _productRepository.Add(feather);
 
-            // 2. Tüy sayısını artır ve yaş güncelleniyorsa güncelle
+           
             _gooseRepository.IncrementFeatherCount(goose.Id);
 
-            // 3. ŞİMDİ yaş kontrolü!
+           
             int age = _gooseRepository.GetAnimalAge(goose.Id);
-            if (age >= 15) // Geçici olarak 35 yapmıştık, sonra 10'a çekersin
+            if (age >= 10)
             {
                 _gooseRepository.KillAnimal(goose.Id);
-                return true; // Kaz öldü
+                return true; 
             }
             return false;
         }
+
         public int GetUnsoldProductCount()
         {
             return _productRepository.GetUnsoldProductCount(4);
@@ -93,5 +95,11 @@ namespace StajOdeviIlk.Services
         {
             return _gooseRepository.GetAliveGoose();
         }
+        public int GetFeatherCount(int gooseId)
+        {
+            return _gooseRepository.GetFeatherCount(gooseId);
+        }
+
+
     }
 }

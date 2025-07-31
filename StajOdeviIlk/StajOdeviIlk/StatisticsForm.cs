@@ -21,7 +21,7 @@ namespace StajOdeviIlk
             dataGridViewStatistics.ReadOnly = true; 
             dataGridViewStatistics.AllowUserToAddRows = false;
             dataGridViewStatistics.AllowUserToDeleteRows = false;
-            dataGridViewStatistics.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Sütunları dolduracak şekilde boyutlandır
+            dataGridViewStatistics.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; 
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) 
         {

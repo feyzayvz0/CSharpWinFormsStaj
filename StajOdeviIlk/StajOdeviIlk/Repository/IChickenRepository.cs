@@ -1,4 +1,5 @@
-﻿using StajOdeviIlk.Repository;
+﻿using StajOdeviIlk.Models;
+using StajOdeviIlk.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,9 @@ namespace StajOdeviIlk.Repositories
     {
         int GetEggCount(int animalId);
         void IncrementEggCount(int animalId);
+     
+        Chicken GetAliveChicken();
+        
+
     }
 }

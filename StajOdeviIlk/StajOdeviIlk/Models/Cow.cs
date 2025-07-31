@@ -13,8 +13,8 @@ namespace StajOdeviIlk.Models
         {
             return new Product
             {
-                AnimalId = this.Id,      // Bu çok önemli!
-                ProductTypeId = 2,       // 2 = Süt
+                AnimalId = this.Id,      
+                ProductTypeId = 2,      
                 Quantity = 1,
                 ProductionDate = DateTime.Now
             };

@@ -1,4 +1,5 @@
 ﻿using StajOdeviIlk.Models;
+using StajOdeviIlk.Repositories;
 using StajOdeviIlk.Repository;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace StajOdeviIlk.Services
 
         public int SellCowProducts(int quantity, decimal unitPrice)
         {
-            int soldCount = _productRepository.SellProducts(2, quantity); // 2: süt
+            int soldCount = _productRepository.SellProducts(2, quantity);
             _cashRepository.AddCash(soldCount * unitPrice);
             return soldCount;
         }
@@ -43,7 +44,7 @@ namespace StajOdeviIlk.Services
                 SpeciesId = 2,
                 Age = 1,
                 Gender = gender,
-                Lifespan = 10, // 10 yaşında ölecek!
+                Lifespan = 10,
                 IsAlive = true
             };
 
@@ -56,34 +57,7 @@ namespace StajOdeviIlk.Services
             return _cowRepository.GetAliveCow();
         }
 
-        /// <summary>
-        /// Süt üretimi - her 2 üretimde yaş +1, 10 yaşında ölüm!
-        /// </summary>
-        public bool ProduceMilk()
-        {
-            var cow = _cowRepository.GetAliveCow();
-            if (cow == null)
-                return false;
-
-            // 1. Sütü üret, Product'a ekle
-            var milk = cow.Produce();
-            milk.AnimalId = cow.Id;
-            milk.ProductionDate = DateTime.Now;
-            milk.IsSold = false;
-            _productRepository.Add(milk);
-
-            // 2. Süt sayısını ve gerekiyorsa yaşı artır
-            _cowRepository.IncrementMilkCount(cow.Id); // Her 2 süt = yaş +1 (bu işlemi repositoryde ayarladık!)
-
-            // 3. Yaşı çek ve ölüm kontrolü
-            int age = _cowRepository.GetAnimalAge(cow.Id);
-            if (age >= 10)
-            {
-                _cowRepository.Kill(cow.Id);
-                return true; // öldü
-            }
-            return false; // yaşıyor
-        }
+     
 
         public List<Product> GetCowProducts()
         {
@@ -97,5 +71,42 @@ namespace StajOdeviIlk.Services
         {
             _cowRepository.UpdateGender(cowId, gender);
         }
+
+        public decimal GetCash()
+        {
+            return _cashRepository.GetTotalCash();
+        }
+        public bool ProduceMilk()
+        {
+            var cow = _cowRepository.GetAliveCow();
+            if (cow == null)
+                return false;
+
+          
+            var milk = cow.Produce(); 
+            milk.AnimalId = cow.Id;
+            milk.ProductionDate = DateTime.Now;
+            milk.IsSold = false;
+            _productRepository.Add(milk);
+
+           
+            _cowRepository.IncrementMilkCount(cow.Id);
+
+         
+            int milkCount = _cowRepository.GetMilkCount(cow.Id);
+            if (milkCount % 2 == 0)
+                _cowRepository.IncrementAge(cow.Id);
+
+            int age = _cowRepository.GetAnimalAge(cow.Id);
+            if (age >= 15)
+            {
+                _cowRepository.Kill(cow.Id);
+                return false;
+            }
+
+            return true; 
+        }
+
+
     }
 }

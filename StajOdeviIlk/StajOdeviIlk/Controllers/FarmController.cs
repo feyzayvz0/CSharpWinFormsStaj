@@ -1,4 +1,6 @@
-﻿using StajOdeviIlk.Repository;
+﻿using StajOdeviIlk.Models;
+using StajOdeviIlk.Repositories;
+using StajOdeviIlk.Repository;
 using StajOdeviIlk.Services;
 using System;
 using System.Collections.Generic;
@@ -6,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace StajOdeviIlk.Controllers
 {
@@ -28,68 +31,49 @@ namespace StajOdeviIlk.Controllers
             _gooseService = gooseService;
         }
 
-        // CHICKEN
+        // --- CHICKEN ---
         public bool FeedChicken() => _chickenService.FeedChicken();
-
-        public int GetChickenUnsoldProductCount() => _chickenService.GetUnsoldProductCount();
-        public bool HasAnyAliveChicken() => _chickenService.HasAnyAliveChicken();
+        public int GetUnsoldEggCount() => _chickenService.GetUnsoldProductCount();
+        public bool HasAliveChicken() => _chickenService.HasAnyAliveChicken();
         public void BuyChicken(decimal price) => _chickenService.BuyChicken(price);
-        public bool HasEnoughChickenCash(decimal price) => _chickenService.GetCash() >= price;
-        public int? GetAliveChickenAge()
-        {
-            var chicken = _chickenService.GetAliveChicken();
-            return chicken?.Age;
-        }
-        public int SellChickenProducts(int qty, decimal price) => _chickenService.SellChickenProducts(qty, price);
-        public decimal GetCash() => _chickenService.GetCash();
+        public decimal GetChickenCash() => _chickenService.GetCash();
+        public int SellEggs(int qty, decimal price) => _chickenService.SellChickenProducts(qty, price);
+        public int? GetAliveChickenAge() => _chickenService.GetAliveChicken()?.Age;
+        public int? GetAliveChickenId() => _chickenService.GetAliveChicken()?.Id;
 
-        // COW
+        // --- COW ---
         public bool FeedCow() => _cowService.ProduceMilk();
-        public int GetCowUnsoldProductCount() => _cowService.GetUnsoldProductCount();
-        public bool HasAnyAliveCow() => _cowService.GetAliveCow() != null;
+        public int GetUnsoldMilkCount() => _cowService.GetUnsoldProductCount();
+        public bool HasAliveCow() => _cowService.GetAliveCow() != null;
         public void BuyCow(string gender, decimal price) => _cowService.BuyCow(gender, price);
-        public bool HasEnoughCowCash(decimal price) => _cowService.GetCash() >= price;
-        public int? GetAliveCowAge()
-        {
-            var cow = _cowService.GetAliveCow();
-            return cow?.Age;
-        }
-        public int SellCowProducts(int qty, decimal price) => _cowService.SellCowProducts(qty, price);
+        public decimal GetCowCash() => _cowService.GetCash();
+        public int SellMilk(int qty, decimal price) => _cowService.SellCowProducts(qty, price);
+        public int? GetAliveCowAge() => _cowService.GetAliveCow()?.Age;
+        public int? GetAliveCowId() => _cowService.GetAliveCow()?.Id;
 
-        // SHEEP
+        // --- SHEEP ---
         public bool FeedSheep() => _sheepService.ProduceWool();
-        public int GetSheepUnsoldProductCount() => _sheepService.GetUnsoldProductCount();
-        public bool HasAnyAliveSheep() => _sheepService.HasAnyAliveSheep();
+        public int GetUnsoldWoolCount() => _sheepService.GetUnsoldProductCount();
+        public bool HasAliveSheep() => _sheepService.HasAnyAliveSheep();
         public void BuySheep(string gender, decimal price) => _sheepService.BuySheep(gender, price);
-        public bool HasEnoughSheepCash(decimal price) => _sheepService.GetCash() >= price;
-        public int? GetAliveSheepAge()
-        {
-            var sheep = _sheepService.GetAliveSheep();
-            return sheep?.Age;
-        }
-        public int SellSheepProducts(int qty, decimal price) => _sheepService.SellSheepProducts(qty, price);
+        public decimal GetSheepCash() => _sheepService.GetCash();
+        public int SellWool(int qty, decimal price) => _sheepService.SellSheepProducts(qty, price);
+        public int? GetAliveSheepAge() => _sheepService.GetAliveSheep()?.Age;
+        public int? GetAliveSheepId() => _sheepService.GetAliveSheep()?.Id;
+        public int GetSheepAgeById(int sheepId) => _sheepService.GetSheepAgeById(sheepId);
+        public string GetSheepGenderById(int sheepId) => _sheepService.GetSheepGenderById(sheepId);
 
-        // GOOSE
+        // --- GOOSE ---
         public bool FeedGoose() => _gooseService.FeedGoose();
-        public int GetGooseUnsoldProductCount() => _gooseService.GetUnsoldProductCount();
-        public bool HasAnyAliveGoose() => _gooseService.HasAnyAliveGoose();
+        public int GetUnsoldFeatherCount() => _gooseService.GetUnsoldProductCount();
+        public bool HasAliveGoose() => _gooseService.HasAnyAliveGoose();
         public void BuyGoose(string gender, decimal price) => _gooseService.BuyGoose(gender, price);
-        public bool HasEnoughGooseCash(decimal price) => _gooseService.GetCash() >= price;
-        public int? GetAliveGooseAge()
-        {
-            var goose = _gooseService.GetAliveGoose();
-            return goose?.Age;
-        }
-        public int SellGooseProducts(int qty, decimal price) => _gooseService.SellGooseProducts(qty, price);
+        public decimal GetGooseCash() => _gooseService.GetCash();
+        public int SellFeather(int qty, decimal price) => _gooseService.SellGooseProducts(qty, price);
+        public int? GetAliveGooseAge() => _gooseService.GetAliveGoose()?.Age;
+        public int? GetAliveGooseId() => _gooseService.GetAliveGoose()?.Id;
 
-        // Default chicken ekle (ilk açılışta çağırabilirsin)
-        public void AddDefaultChicken()
-        {
-            if (!HasAnyAliveChicken())
-                _chickenService.BuyChicken(20);
-        }
-
-        // Tüm kasayı (ayrı ayrı repository varsa toplayarak) getir
+      
         public decimal GetTotalCash()
         {
             return _chickenService.GetCash() +
@@ -98,35 +82,64 @@ namespace StajOdeviIlk.Controllers
                    _gooseService.GetCash();
         }
 
-        // SHEEP spesifik fonksiyonlar (id ile erişim isteyen kodlar için)
-        public int? GetAliveSheepId() => _sheepService.GetAliveSheepId();
-
-        public int GetSheepAgeById(int sheepId) => _sheepService.GetSheepAgeById(sheepId);
-        public string GetSheepGenderById(int sheepId) => _sheepService.GetSheepGenderById(sheepId);
-
-        // GOOSE için cinsiyet güncelle (eğer serviste böyle fonksiyon varsa)
+    
         public void UpdateGooseGender(int gooseId, string gender)
         {
             _gooseService.UpdateGooseGender(gooseId, gender);
         }
-        public int SellWool(int qty, decimal price)
+        public bool HasAnyAliveSheep()
         {
-            return _sheepService.SellSheepProducts(qty, price);
+            return _sheepService.HasAnyAliveSheep();
         }
 
-        public int SellMilk(int qty, decimal price)
+        public bool HasAnyAliveChicken()
         {
-            return _cowService.SellCowProducts(qty, price);
+            return _chickenService.HasAnyAliveChicken();
+        }
+        public int GetSheepAge()
+        {
+            var sheep = _sheepService.GetAliveSheep();
+            return sheep?.Age ?? 0;
+        }
+        public int GetGooseAge()
+        {
+            var goose = _gooseService.GetAliveGoose();
+            return goose?.Age ?? 0;
+        }
+        public int GetCowAge()
+        {
+            var cow = _cowService.GetAliveCow();
+            return cow?.Age ?? 0;
         }
 
-        public int SellFeather(int qty, decimal price)
+        public decimal GetCash()
         {
-            return _gooseService.SellGooseProducts(qty, price);
+            return _chickenService.GetCash();
         }
 
-        public int SellEggs(int qty, decimal price)
+
+        public int GetChickenUnsoldProductCount()
         {
-            return _chickenService.SellChickenProducts(qty, price);
+            return _chickenService.GetUnsoldProductCount();
+        }
+
+
+        public int GetChickenAge()
+        {
+
+            var chicken = _chickenService.GetAliveChicken();
+            return chicken?.Age ?? 0;
+        }
+        public Goose GetAliveGoose()
+        {
+            return _gooseService.GetAliveGoose();
+        }
+        public void AddDefaultChicken()
+        {
+            if (!HasAliveChicken())
+            {
+                _chickenService.BuyChicken(20); 
+            }
         }
 
     }

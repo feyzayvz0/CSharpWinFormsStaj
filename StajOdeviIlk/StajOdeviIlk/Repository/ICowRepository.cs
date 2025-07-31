@@ -16,7 +16,10 @@ namespace StajOdeviIlk.Repository
         void Kill(int cowId);
         List<Product> GetProducts(int cowId);
 
-        void IncrementMilkCount(int cowId);    // EKLE!
+        void IncrementMilkCount(int cowId);    
         int GetAnimalAge(int cowId);
+
+        void IncrementAge(int cowId);      
+        int GetMilkCount(int cowId);
     }
 }

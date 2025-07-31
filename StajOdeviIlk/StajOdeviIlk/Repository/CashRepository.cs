@@ -38,7 +38,7 @@ namespace StajOdeviIlk.Repositories
                 connection.Open();
                 SqlCommand cmd = new SqlCommand(
                     "INSERT INTO CashRegister (Amount, Date) VALUES (@Amount, @Date)", connection);
-                cmd.Parameters.AddWithValue("@Amount", -amount); // Negatif olarak ekle!
+                cmd.Parameters.AddWithValue("@Amount", -amount); 
                 cmd.Parameters.AddWithValue("@Date", DateTime.Now);
                 cmd.ExecuteNonQuery();
             }

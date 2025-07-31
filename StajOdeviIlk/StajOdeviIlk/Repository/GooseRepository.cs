@@ -23,7 +23,6 @@ namespace StajOdeviIlk.Repository
             using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
-                // Tüyü artır
                 string updateFeatherQuery = "UPDATE Animals SET FeatherProductionCount = ISNULL(FeatherProductionCount, 0) + 1 WHERE Id = @id AND SpeciesId = 4";
                 using (var featherCmd = new SqlCommand(updateFeatherQuery, conn))
                 {
@@ -31,7 +30,7 @@ namespace StajOdeviIlk.Repository
                     featherCmd.ExecuteNonQuery();
                 }
 
-                // Son tüy sayısını al
+    
                 string selectQuery = "SELECT FeatherProductionCount FROM Animals WHERE Id = @id AND SpeciesId = 4";
                 int count;
                 using (var selectCmd = new SqlCommand(selectQuery, conn))
@@ -40,8 +39,7 @@ namespace StajOdeviIlk.Repository
                     count = Convert.ToInt32(selectCmd.ExecuteScalar());
                 }
 
-                // Her 3 tüyde bir yaş artır
-                if (count % 3 == 0)
+                if (count % 4 == 0)
                 {
                     string ageUpdateQuery = "UPDATE Animals SET Age = Age + 1 WHERE Id = @id AND SpeciesId = 4";
                     using (var ageCmd = new SqlCommand(ageUpdateQuery, conn))
