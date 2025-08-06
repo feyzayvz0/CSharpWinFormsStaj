@@ -1,0 +1,444 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\statisticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\statisticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\producttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\producttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\repository\\statisticsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\repository\\statisticsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\services\\chickenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\services\\chickenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\statisticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\statisticsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\repository\\gooserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\repository\\gooserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\repository\\cowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\repository\\cowrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\repository\\animalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\repository\\animalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\properties\\resources.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\sheep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\sheep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\goose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\goose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\cow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\cow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\chicken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\chicken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\migrations\\20250806111602_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\migrations\\20250806111602_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\controllers\\farmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\controllers\\farmcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\services\\sheepservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\services\\sheepservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\repository\\sheeprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\repository\\sheeprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\migrations\\farmdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\migrations\\farmdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|c:\\users\\feyza\\source\\repos\\staj\\stajodeviilknet8\\stajodeviilknet8\\models\\farmdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\models\\farmdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\stajodeviilknet8\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{13E5F9F7-0873-48D0-B98B-A6FC6973C604}|StajOdeviIlkNet8\\StajOdeviIlkNet8.csproj|solutionrelative:stajodeviilknet8\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Form1.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Form1.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Form1.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Form1.cs",
+              "ViewState": "AgIAALwDAAAAAAAAAAAUwMcDAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T20:34:26.715Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "StatisticsForm.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\StatisticsForm.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\StatisticsForm.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\StatisticsForm.cs [Tasar\u0131m]",
+              "RelativeToolTip": "StajOdeviIlkNet8\\StatisticsForm.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:27:57.566Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChickenService.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Services\\ChickenService.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Services\\ChickenService.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Services\\ChickenService.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Services\\ChickenService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAnwCMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:20:33.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Product.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\Product.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:17:45.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StatisticsForm.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\StatisticsForm.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\StatisticsForm.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\StatisticsForm.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\StatisticsForm.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAnwCcAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:47.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StatisticsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\StatisticsRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Repository\\StatisticsRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\StatisticsRepository.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Repository\\StatisticsRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAzwGMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:43.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Repository\\ProductRepository.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAD4vz8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:34.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GooseRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\GooseRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Repository\\GooseRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\GooseRepository.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Repository\\GooseRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIAwwBcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:31.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CowRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\CowRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Repository\\CowRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\CowRepository.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Repository\\CowRepository.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAD4vzAAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:27.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AnimalRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\AnimalRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Repository\\AnimalRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\AnimalRepository.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Repository\\AnimalRepository.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAD4vy0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:23.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Resources.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Properties\\Resources.Designer.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Properties\\Resources.Designer.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Properties\\Resources.Designer.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Properties\\Resources.Designer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:14.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Program.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Program.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Program.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:09.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductType.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\ProductType.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\ProductType.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\ProductType.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\ProductType.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAuwA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:12:03.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Sheep.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Sheep.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\Sheep.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Sheep.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\Sheep.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAASwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:11:56.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Goose.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Goose.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\Goose.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Goose.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\Goose.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAhwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:11:53.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Cow.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Cow.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\Cow.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Cow.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\Cow.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAArwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:11:50.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FarmController.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Controllers\\FarmController.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Controllers\\FarmController.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Controllers\\FarmController.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Controllers\\FarmController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:08:54.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SheepService.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Services\\SheepService.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Services\\SheepService.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Services\\SheepService.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Services\\SheepService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:07:27.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SheepRepository.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\SheepRepository.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Repository\\SheepRepository.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Repository\\SheepRepository.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Repository\\SheepRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T16:06:23.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Chicken.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Chicken.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\Chicken.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\Chicken.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\Chicken.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAArwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T15:09:58.382Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "FarmDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\FarmDbContext.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Models\\FarmDbContext.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Models\\FarmDbContext.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Models\\FarmDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T15:08:40.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "FarmDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Migrations\\FarmDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Migrations\\FarmDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Migrations\\FarmDbContextModelSnapshot.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Migrations\\FarmDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:44:32.146Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20250806111602_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Migrations\\20250806111602_InitialCreate.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Migrations\\20250806111602_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Migrations\\20250806111602_InitialCreate.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Migrations\\20250806111602_InitialCreate.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAvwHUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:44:29.593Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Form1.Designer.cs",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Form1.Designer.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAIwHsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:44:08.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Form1.cs [Tasar\u0131m]",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Form1.cs",
+              "RelativeDocumentMoniker": "StajOdeviIlkNet8\\Form1.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\StajOdeviIlkNet8\\StajOdeviIlkNet8\\Form1.cs [Tasar\u0131m]",
+              "RelativeToolTip": "StajOdeviIlkNet8\\Form1.cs [Tasar\u0131m]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T20:10:47.79Z",
+              "EditorCaption": " [Tasar\u0131m]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
