@@ -43,6 +43,7 @@
             dataGridViewStatistics.RowTemplate.Height = 24;
             dataGridViewStatistics.Size = new Size(1091, 180);
             dataGridViewStatistics.TabIndex = 0;
+            dataGridViewStatistics.CellContentClick += dataGridViewStatistics_CellContentClick;
             // 
             // StatisticsForm
             // 

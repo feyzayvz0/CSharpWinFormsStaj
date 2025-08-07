@@ -164,11 +164,7 @@ namespace StajOdeviIlkNet8
 
 
 
-            if (!_farmController.HasAnyAliveChicken())
-            {
-               
-                _farmController.AddDefaultChicken(); 
-            }
+            
 
             UpdateProductCountLabel();
             UpdateCashLabel();
@@ -183,11 +179,12 @@ namespace StajOdeviIlkNet8
         }
         private async void btnChickenFeed_Click(object sender, EventArgs e)
         {
-          
+           
+            btnChickenFeed.Enabled = false;
+
             if (!_farmController.HasAliveChicken())
             {
                 MessageBox.Show("Canlı tavuk yok!! Lütfen yeni bir tavuk satın alın.");
-                btnChickenFeed.Enabled = false;
                 chickenBuyBlinkTimer.Start();
                 return;
             }
@@ -204,13 +201,15 @@ namespace StajOdeviIlkNet8
             if (!alive)
             {
                 MessageBox.Show("Tavuk 5 yaşına ulaştı ve öldü. Yeni tavuk almanız gerekiyor...");
-                btnChickenFeed.Enabled = false;
                 txtChickenAge.Text = "Yok";
                 chickenBuyBlinkTimer.Start();
             }
 
             UpdateChickenProductCountLabel();
             UpdateChickenAgeLabel();
+
+            
+            btnChickenFeed.Enabled = _farmController.HasAliveChicken();
         }
 
         private void btnChickenSell_Click(object sender, EventArgs e)
@@ -319,7 +318,10 @@ namespace StajOdeviIlkNet8
         {
             int age = _farmController.GetChickenAge();
             txtChickenAge.Text = age > 0 ? age.ToString() : "Tavuk Yok";
+            btnChickenFeed.Enabled = age > 0;
         }
+
+
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
@@ -338,7 +340,8 @@ namespace StajOdeviIlkNet8
 
         private async void button6_Click(object sender, EventArgs e)
         {
-            
+            btnCowFeed.Enabled = false;
+
             if (!_farmController.HasAliveCow())
             {
                 MessageBox.Show("Canlı inek yok!");
@@ -352,7 +355,6 @@ namespace StajOdeviIlkNet8
                 await Task.Delay(30);
             }
 
-            
             bool alive = _farmController.FeedCow();
 
             int age = _farmController.GetCowAge();
@@ -364,13 +366,19 @@ namespace StajOdeviIlkNet8
             }
 
             UpdateCowProductCountLabel();
+
+           
+            btnCowFeed.Enabled = _farmController.HasAliveCow();
         }
+
 
         private void UpdateCowAgeLabel()
         {
             int age = _farmController.GetCowAge();
             txtCowAge.Text = age > 0 ? age.ToString() : "İnek Yok";
+            btnCowFeed.Enabled = age > 0;
         }
+
 
         private void UpdateCowProductCountLabel()
         {
@@ -506,12 +514,13 @@ namespace StajOdeviIlkNet8
 
         private async void btnSheepWool_Click(object sender, EventArgs e)
         {
+            btnSheepWool.Enabled = false;
+
             string selectedGender = cbSheepGender.SelectedItem?.ToString() ?? string.Empty;
 
             if (string.IsNullOrEmpty(selectedGender) || selectedGender == "Seçiniz")
             {
                 MessageBox.Show("Lütfen koyunun cinsiyetini seçin, yün kırpma yapılamaz.");
-                btnSheepWool.Enabled = false;
                 btnSheepBuy.Enabled = true;
                 sheepBuyBlinkTimer.Start();
                 btnSheepBuy.BackColor = Color.Red;
@@ -521,7 +530,6 @@ namespace StajOdeviIlkNet8
             if (!_farmController.HasAliveSheep())
             {
                 MessageBox.Show("Canlı koyun yok! Lütfen yeni bir koyun satın alın.");
-                btnSheepWool.Enabled = false;
                 sheepBuyBlinkTimer.Start();
                 InitializeSheepGenderComboBox();
                 cbSheepGender.Enabled = true;
@@ -553,6 +561,8 @@ namespace StajOdeviIlkNet8
 
             UpdateSheepProductCountLabel();
             UpdateSheepAgeLabel();
+
+            btnSheepWool.Enabled = _farmController.HasAliveSheep();
         }
 
         private void UpdateSheepProductCountLabel()
@@ -742,11 +752,12 @@ namespace StajOdeviIlkNet8
 
         private async void btnGooseFeed_Click(object sender, EventArgs e)
         {
+            btnGooseFeed.Enabled = false;
+
             string selectedGender = cbGooseGender.SelectedItem?.ToString() ?? "";
             if (string.IsNullOrEmpty(selectedGender) || selectedGender == "Seçiniz")
             {
                 MessageBox.Show("Lütfen kazın cinsiyetini seçin, besleme yapılamaz.");
-                btnGooseFeed.Enabled = false;
                 btnGooseBuy.Enabled = true;
                 gooseBuyBlinkTimer.Start();
                 btnGooseBuy.BackColor = Color.Red;
@@ -756,7 +767,6 @@ namespace StajOdeviIlkNet8
             if (!_farmController.HasAliveGoose())
             {
                 MessageBox.Show("Canlı kaz yok! Lütfen yeni bir kaz satın alın.");
-                btnGooseFeed.Enabled = false;
                 gooseBuyBlinkTimer.Start();
                 InitializeGooseGenderComboBox();
                 cbGooseGender.Enabled = true;
@@ -793,6 +803,8 @@ namespace StajOdeviIlkNet8
 
             UpdateGooseAgeLabel();
             UpdateGooseProductCountLabel();
+
+            btnGooseFeed.Enabled = _farmController.HasAliveGoose();
         }
 
         private void InitializeGooseGenderComboBox()

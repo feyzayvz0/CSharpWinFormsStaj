@@ -12,7 +12,8 @@ using System.Threading.Tasks;
         public int Id { get; set; }
         public int SpeciesId { get; set; }
         public int Age { get; set; }
-        public string Gender { get; set; }
+        public string Gender { get; set; } = string.Empty;
+
         public int Lifespan { get; set; }
         public bool IsAlive { get; set; } = true;
 

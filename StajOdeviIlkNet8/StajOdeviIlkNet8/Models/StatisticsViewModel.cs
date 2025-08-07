@@ -8,7 +8,8 @@ namespace StajOdeviIlkNet8.Models
 {
     public class StatisticsViewModel
     {
-        public string AnimalType { get; set; }
+        public string AnimalType { get; set; } = string.Empty;
+
         public int DeadAnimals { get; set; }
         public int EggsInStock { get; set; }
         public int EggsSold { get; set; }

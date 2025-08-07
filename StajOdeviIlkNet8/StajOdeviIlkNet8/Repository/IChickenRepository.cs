@@ -6,15 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StajOdeviIlkNet8.Repositories
+namespace StajOdeviIlkNet8.Repository
 {
     public interface IChickenRepository : IAnimalRepository
     {
         int GetEggCount(int animalId);
         void IncrementEggCount(int animalId);
-     
-        Chicken GetAliveChicken();
-        
 
+        Chicken? GetAliveChicken(); // Düzgün hali bu!
     }
 }
+

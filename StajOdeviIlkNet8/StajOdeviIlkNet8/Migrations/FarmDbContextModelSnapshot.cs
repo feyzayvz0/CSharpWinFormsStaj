@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using StajOdeviIlkNet8;
 using StajOdeviIlkNet8.Models;
 
 #nullable disable
@@ -76,6 +75,28 @@ namespace StajOdeviIlkNet8.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("AnimalSpecies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Chicken"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Cow"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Sheep"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Goose"
+                        });
                 });
 
             modelBuilder.Entity("StajOdeviIlkNet8.Models.CashRegister", b =>
@@ -95,6 +116,14 @@ namespace StajOdeviIlkNet8.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CashRegisters");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Amount = 500m,
+                            Date = new DateTime(2025, 8, 7, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("StajOdeviIlkNet8.Models.Product", b =>
@@ -144,6 +173,28 @@ namespace StajOdeviIlkNet8.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductType");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Egg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Milk"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Wool"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Feather"
+                        });
                 });
 
             modelBuilder.Entity("StajOdeviIlkNet8.Models.Chicken", b =>

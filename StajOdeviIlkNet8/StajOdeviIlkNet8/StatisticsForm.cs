@@ -17,27 +17,27 @@ namespace StajOdeviIlkNet8
         public StatisticsForm()
         {
             InitializeComponent();
-            
-            dataGridViewStatistics.AutoGenerateColumns = true; 
-            dataGridViewStatistics.ReadOnly = true; 
+
+            dataGridViewStatistics.AutoGenerateColumns = true;
+            dataGridViewStatistics.ReadOnly = true;
             dataGridViewStatistics.AllowUserToAddRows = false;
             dataGridViewStatistics.AllowUserToDeleteRows = false;
-            dataGridViewStatistics.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; 
+            dataGridViewStatistics.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-        
+
         }
         private void StatisticsForm_Load(object sender, EventArgs e)
-        { 
-        
+        {
+
         }
 
         public void LoadStatistics(List<StatisticsViewModel> statisticsList)
         {
             dataGridViewStatistics.DataSource = statisticsList;
 
-           
+
             if (dataGridViewStatistics.Columns["AnimalType"] != null)
                 dataGridViewStatistics.Columns["AnimalType"].HeaderText = "Hayvan Türü";
 
@@ -79,7 +79,9 @@ namespace StajOdeviIlkNet8
 
         }
 
+        private void dataGridViewStatistics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
+        }
     }
 }

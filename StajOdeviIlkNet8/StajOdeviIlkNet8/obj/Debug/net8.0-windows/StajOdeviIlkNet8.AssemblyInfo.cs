@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StajOdeviIlkNet8")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d54d78c38c31f0c54a22c7ff18a321a22c68c8fd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa2943d01eff89bd491f1e81b54dd8b0b3f0ffbe")]
 [assembly: System.Reflection.AssemblyProductAttribute("StajOdeviIlkNet8")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StajOdeviIlkNet8")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

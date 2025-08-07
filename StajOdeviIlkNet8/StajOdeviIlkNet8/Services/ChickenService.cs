@@ -109,6 +109,5 @@ namespace StajOdeviIlkNet8.Services
         {
             return _chickenRepository.GetAliveChicken();
         }
-
     }
 }

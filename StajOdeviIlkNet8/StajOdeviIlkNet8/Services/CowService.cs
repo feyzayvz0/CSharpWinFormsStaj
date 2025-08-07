@@ -9,18 +9,11 @@ using System.Threading.Tasks;
 
 namespace StajOdeviIlkNet8.Services
 {
-    public class CowService
+    public class CowService(ICowRepository cowRepository, IProductRepository productRepository, ICashRepository cashRepository)
     {
-        private readonly ICowRepository _cowRepository;
-        private readonly IProductRepository _productRepository;
-        private readonly ICashRepository _cashRepository;
-
-        public CowService(ICowRepository cowRepository, IProductRepository productRepository, ICashRepository cashRepository)
-        {
-            _cowRepository = cowRepository;
-            _productRepository = productRepository;
-            _cashRepository = cashRepository;
-        }
+        private readonly ICowRepository _cowRepository = cowRepository;
+        private readonly IProductRepository _productRepository = productRepository;
+        private readonly ICashRepository _cashRepository = cashRepository;
 
         public int SellCowProducts(int quantity, decimal unitPrice)
         {
@@ -52,17 +45,17 @@ namespace StajOdeviIlkNet8.Services
             _cashRepository.DecreaseCash(price);
         }
 
-        public Cow GetAliveCow()
+        public Cow? GetAliveCow()
         {
             return _cowRepository.GetAliveCow();
         }
 
-     
+
 
         public List<Product> GetCowProducts()
         {
             var cow = _cowRepository.GetAliveCow();
-            if (cow == null) return new List<Product>();
+            if (cow == null) return [];
 
             return _cowRepository.GetProducts(cow.Id);
         }

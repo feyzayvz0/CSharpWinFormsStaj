@@ -24,5 +24,29 @@ namespace StajOdeviIlkNet8.Models
             optionsBuilder.UseSqlServer("Server=FEYZA;Database=StajOdeviIlkNet8Db;Trusted_Connection=True;TrustServerCertificate=True;");
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<AnimalSpecies>().HasData(
+                new AnimalSpecies { Id = 1, Name = "Chicken" },
+                new AnimalSpecies { Id = 2, Name = "Cow" },
+                new AnimalSpecies { Id = 3, Name = "Sheep" },
+                new AnimalSpecies { Id = 4, Name = "Goose" }
+            );
+
+            modelBuilder.Entity<ProductType>().HasData(
+                new ProductType { Id = 1, Name = "Egg" },
+                new ProductType { Id = 2, Name = "Milk" },
+                new ProductType { Id = 3, Name = "Wool" },
+                new ProductType { Id = 4, Name = "Feather" }
+            );
+
+            modelBuilder.Entity<CashRegister>().HasData(
+                new CashRegister { Id = 1, Amount = 500, Date = new DateTime(2025, 8, 7) }
+            );
+        }
+
     }
 }
+
