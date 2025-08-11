@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BarnManagementAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+239bc471d098467fcf6c8f6f4ba4f710ca957ff2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5fad8fb8bc839ea3bcd995146a761435220bbb8a")]
 [assembly: System.Reflection.AssemblyProductAttribute("BarnManagementAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BarnManagementAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

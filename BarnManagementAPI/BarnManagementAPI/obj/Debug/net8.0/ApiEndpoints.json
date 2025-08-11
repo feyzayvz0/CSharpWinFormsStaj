@@ -90,6 +90,52 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "BarnManagementAPI.Controllers.CashController",
+    "Method": "Add",
+    "RelativePath": "api/Cash/add",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BarnManagementAPI.Models.Dtos.AddCashRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "BarnManagementAPI.Models.Dtos.BalanceResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BarnManagementAPI.Controllers.CashController",
+    "Method": "GetBalance",
+    "RelativePath": "api/Cash/balance",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "BarnManagementAPI.Models.Dtos.BalanceResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "BarnManagementAPI.Controllers.FarmsController",
     "Method": "Create",
     "RelativePath": "api/Farms",
