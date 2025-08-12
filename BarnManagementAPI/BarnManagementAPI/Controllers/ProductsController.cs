@@ -61,7 +61,8 @@ namespace BarnManagementAPI.Controllers
             _db.Products.Add(product);
 
             // bir sonraki üretim zamanı
-            animal.NextProductionAt = now.Add(rule.cooldown);
+            animal.NextProductionAt = now.AddSeconds(5);
+
 
             await _db.SaveChangesAsync(ct);
 
@@ -163,6 +164,58 @@ namespace BarnManagementAPI.Controllers
                 .ToListAsync(ct);
 
             return Ok(items);
+        }
+
+        // GET /api/products/mine?sold=true&farmId=1&productType=Egg&page=1&pageSize=50
+        [HttpGet("mine")]
+        public async Task<ActionResult<ProductListResult>> GetMine(
+            [FromQuery] bool? sold,
+            [FromQuery] int? farmId,
+            [FromQuery] string? productType,
+            [FromQuery] int page = 1,
+            [FromQuery] int pageSize = 50,
+            CancellationToken ct = default)
+        {
+            var userId = User.GetUserId();
+            if (userId is null) return Unauthorized();
+
+            if (page <= 0) page = 1;
+            if (pageSize <= 0 || pageSize > 200) pageSize = 50;
+
+            // Kullanıcının ürünleri
+            var query = _db.Products
+                .Include(p => p.Animal)
+                .ThenInclude(a => a.Farm)
+                .Where(p => p.Animal.Farm.UserId == userId);
+
+            if (sold is not null)
+                query = query.Where(p => p.IsSold == sold.Value);
+
+            if (farmId is not null)
+                query = query.Where(p => p.Animal.FarmId == farmId.Value);
+
+            if (!string.IsNullOrWhiteSpace(productType))
+                query = query.Where(p => p.ProductType == productType);
+
+            var total = await query.CountAsync(ct);
+
+            var items = await query
+                .OrderByDescending(p => p.ProductionDate)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .Select(p => new ProductResponse
+                {
+                    Id = p.Id,
+                    AnimalId = p.AnimalId,
+                    ProductType = p.ProductType,
+                    Quantity = p.Quantity,
+                    SalePrice = p.SalePrice,
+                    IsSold = p.IsSold,
+                    ProductionDate = p.ProductionDate
+                })
+                .ToListAsync(ct);
+
+            return Ok(new ProductListResult { Total = total, Items = items });
         }
     }
 }

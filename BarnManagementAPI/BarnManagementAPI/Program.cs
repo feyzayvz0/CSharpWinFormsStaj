@@ -4,8 +4,22 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Serilog;
+
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(new ConfigurationBuilder()
+        .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+        .AddEnvironmentVariables()
+        .Build())
+    .CreateLogger();
+
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog(Log.Logger);
+
 
 // Controllers
 builder.Services.AddControllers();

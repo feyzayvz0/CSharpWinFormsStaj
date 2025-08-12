@@ -171,3 +171,16 @@ C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\obj\Debug\n
 C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\obj\Debug\net8.0\BarnManagementAPI.genruntimeconfig.cache
 C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\obj\Debug\net8.0\ref\BarnManagementAPI.dll
 C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\feyza\source\repos\Staj\BarnManagementAPI\BarnManagementAPI\bin\Debug\net8.0\Serilog.Sinks.File.dll

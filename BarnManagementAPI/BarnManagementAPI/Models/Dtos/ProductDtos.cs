@@ -26,4 +26,9 @@
         public bool IsSold { get; set; }
         public DateTime ProductionDate { get; set; }
     }
+    public class ProductListResult
+    {
+        public int Total { get; set; }
+        public List<ProductResponse> Items { get; set; } = new();
+    }
 }
