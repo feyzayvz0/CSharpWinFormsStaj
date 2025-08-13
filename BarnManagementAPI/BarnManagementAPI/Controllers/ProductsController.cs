@@ -5,6 +5,7 @@ using BarnManagementAPI.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging; // ✨ ILogger
 
 namespace BarnManagementAPI.Controllers
 {
@@ -14,7 +15,13 @@ namespace BarnManagementAPI.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly AppDbContext _db;
-        public ProductsController(AppDbContext db) => _db = db;
+        private readonly ILogger<ProductsController> _logger; // ✨ logger alanı
+
+        public ProductsController(AppDbContext db, ILogger<ProductsController> logger) // ✨ ctor ile al
+        {
+            _db = db;
+            _logger = logger;
+        }
 
         // Basit üretim kuralları (ileride DB'ye alabiliriz)
         private static readonly Dictionary<string, (string productType, decimal unitPrice, TimeSpan cooldown)> Rules
@@ -37,16 +44,32 @@ namespace BarnManagementAPI.Controllers
                 .Include(a => a.Farm)
                 .FirstOrDefaultAsync(a => a.Id == req.AnimalId && a.Farm.UserId == userId, ct);
 
-            if (animal is null) return NotFound("Animal not found or not yours.");
-            if (!animal.IsAlive) return BadRequest("Animal is not alive.");
+            if (animal is null)
+            {
+                _logger.LogWarning("Produce failed: animal not found or not owned. req.AnimalId={AnimalId}, user={UserId}", req.AnimalId, userId);
+                return NotFound("Animal not found or not yours.");
+            }
+
+            if (!animal.IsAlive)
+            {
+                _logger.LogWarning("Produce failed: animal not alive. animalId={AnimalId}, user={UserId}", animal.Id, userId);
+                return BadRequest("Animal is not alive.");
+            }
 
             if (!Rules.TryGetValue(animal.Species, out var rule))
+            {
+                _logger.LogWarning("Produce failed: no rule for species. species={Species}, animalId={AnimalId}, user={UserId}", animal.Species, animal.Id, userId);
                 return BadRequest("No production rule for this species.");
+            }
 
             // Cooldown kontrolü
             var now = DateTime.UtcNow;
             if (animal.NextProductionAt is DateTime next && now < next)
+            {
+                _logger.LogWarning("Produce blocked by cooldown. animalId={AnimalId}, user={UserId}, now={Now}, next={Next}",
+                    animal.Id, userId, now, next);
                 return BadRequest($"Production not ready. Try after {next:O}");
+            }
 
             // Ürünü oluştur
             var product = new Product
@@ -60,11 +83,13 @@ namespace BarnManagementAPI.Controllers
             };
             _db.Products.Add(product);
 
-            // bir sonraki üretim zamanı
+            // TEST: bir sonraki üretim zamanı (5 sn). PROD'da rule.cooldown'a geri al.
             animal.NextProductionAt = now.AddSeconds(5);
 
-
             await _db.SaveChangesAsync(ct);
+
+            _logger.LogInformation("Product produced: productId={ProductId}, type={Type}, animalId={AnimalId}, user={UserId}",
+                product.Id, product.ProductType, animal.Id, userId);
 
             return Ok(new ProductResponse
             {
@@ -91,17 +116,31 @@ namespace BarnManagementAPI.Controllers
                 .ThenInclude(f => f.User)
                 .FirstOrDefaultAsync(p => p.Id == req.ProductId && p.Animal.Farm.UserId == userId, ct);
 
-            if (product is null) return NotFound("Product not found or not yours.");
-            if (product.IsSold) return BadRequest("Product already sold.");
+            if (product is null)
+            {
+                _logger.LogWarning("Sell failed: product not found or not owned. productId={ProductId}, user={UserId}", req.ProductId, userId);
+                return NotFound("Product not found or not yours.");
+            }
+
+            if (product.IsSold)
+            {
+                _logger.LogWarning("Sell failed: product already sold. productId={ProductId}, user={UserId}", product.Id, userId);
+                return BadRequest("Product already sold.");
+            }
+
+            var total = product.SalePrice * product.Quantity;
 
             // Bakiyeye ekle
             var user = await _db.Users.FirstAsync(u => u.Id == userId, ct);
-            user.Balance += product.SalePrice * product.Quantity;
+            user.Balance += total;
 
             product.IsSold = true;
             await _db.SaveChangesAsync(ct);
 
-            return Ok(new { message = "Product sold.", received = product.SalePrice * product.Quantity, newBalance = user.Balance });
+            _logger.LogInformation("Product sold: productId={ProductId}, total={Total}, newBalance={Balance}, user={UserId}",
+                product.Id, total, user.Balance, userId);
+
+            return Ok(new { message = "Product sold.", received = total, newBalance = user.Balance });
         }
 
         // POST /api/products/sell-all  => belirli çiftlikte (ve opsiyonel tipte) tüm satılmamış ürünleri sat
@@ -113,7 +152,11 @@ namespace BarnManagementAPI.Controllers
 
             // Kullanıcının çiftliği mi?
             var owns = await _db.Farms.AnyAsync(f => f.Id == req.FarmId && f.UserId == userId, ct);
-            if (!owns) return NotFound("Farm not found or not yours.");
+            if (!owns)
+            {
+                _logger.LogWarning("SellAll failed: farm not found or not owned. farmId={FarmId}, user={UserId}", req.FarmId, userId);
+                return NotFound("Farm not found or not yours.");
+            }
 
             var query = _db.Products
                 .Include(p => p.Animal)
@@ -123,7 +166,11 @@ namespace BarnManagementAPI.Controllers
                 query = query.Where(p => p.ProductType == req.ProductType);
 
             var list = await query.ToListAsync(ct);
-            if (list.Count == 0) return Ok(new { message = "No unsold products." });
+            if (list.Count == 0)
+            {
+                _logger.LogInformation("SellAll: nothing to sell. farmId={FarmId}, user={UserId}", req.FarmId, userId);
+                return Ok(new { message = "No unsold products." });
+            }
 
             decimal total = list.Sum(p => p.SalePrice * p.Quantity);
 
@@ -133,6 +180,9 @@ namespace BarnManagementAPI.Controllers
             foreach (var p in list) p.IsSold = true;
 
             await _db.SaveChangesAsync(ct);
+
+            _logger.LogInformation("SellAll: soldCount={Count}, received={Total}, newBalance={Balance}, farmId={FarmId}, user={UserId}",
+                list.Count, total, user.Balance, req.FarmId, userId);
 
             return Ok(new { message = "All products sold.", count = list.Count, received = total, newBalance = user.Balance });
         }
@@ -145,7 +195,11 @@ namespace BarnManagementAPI.Controllers
             if (userId is null) return Unauthorized();
 
             var owns = await _db.Farms.AnyAsync(f => f.Id == farmId && f.UserId == userId, ct);
-            if (!owns) return NotFound("Farm not found or not yours.");
+            if (!owns)
+            {
+                _logger.LogWarning("GetUnsoldByFarm failed: farm not found or not owned. farmId={FarmId}, user={UserId}", farmId, userId);
+                return NotFound("Farm not found or not yours.");
+            }
 
             var items = await _db.Products
                 .Include(p => p.Animal)
@@ -163,6 +217,7 @@ namespace BarnManagementAPI.Controllers
                 })
                 .ToListAsync(ct);
 
+            _logger.LogInformation("GetUnsoldByFarm: count={Count}, farmId={FarmId}, user={UserId}", items.Count, farmId, userId);
             return Ok(items);
         }
 
@@ -214,6 +269,9 @@ namespace BarnManagementAPI.Controllers
                     ProductionDate = p.ProductionDate
                 })
                 .ToListAsync(ct);
+
+            _logger.LogInformation("GetMine: total={Total}, returned={Returned}, user={UserId}, sold={Sold}, farmId={FarmId}, type={Type}, page={Page}, size={Size}",
+                total, items.Count, userId, sold, farmId, productType, page, pageSize);
 
             return Ok(new ProductListResult { Total = total, Items = items });
         }

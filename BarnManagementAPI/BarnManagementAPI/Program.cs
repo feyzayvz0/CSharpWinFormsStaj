@@ -20,7 +20,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.UseSerilog(Log.Logger);
 
-
+builder.Services.AddHostedService<AnimalLifecycleService>();
 // Controllers
 builder.Services.AddControllers();
 

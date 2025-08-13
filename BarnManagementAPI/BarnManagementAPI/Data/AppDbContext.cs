@@ -14,14 +14,23 @@ namespace BarnManagementAPI.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<User>()
-                .Property(u => u.Balance)
-                .HasPrecision(18, 2);
+            // Product → Animal CASCADE DELETE
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Animal)
+                .WithMany(a => a.Products)
+                .HasForeignKey(p => p.AnimalId)
+                .OnDelete(DeleteBehavior.Cascade);
 
+            // DECIMAL precision (uyarıları keser)
             modelBuilder.Entity<Product>()
                 .Property(p => p.SalePrice)
                 .HasPrecision(18, 2);
+
+            modelBuilder.Entity<User>()
+                .Property(u => u.Balance)
+                .HasPrecision(18, 2);
         }
+
 
     }
 }

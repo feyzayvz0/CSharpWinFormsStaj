@@ -210,6 +210,22 @@
   },
   {
     "ContainingType": "BarnManagementAPI.Controllers.FarmsController",
+    "Method": "Delete",
+    "RelativePath": "api/Farms/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BarnManagementAPI.Controllers.FarmsController",
     "Method": "GetMine",
     "RelativePath": "api/Farms/mine",
     "HttpMethod": "GET",
@@ -357,6 +373,42 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "BarnManagementAPI.Controllers.UsersController",
+    "Method": "GetMe",
+    "RelativePath": "api/Users/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "BarnManagementAPI.Models.Dtos.UserProfileResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "BarnManagementAPI.Controllers.UsersController",
+    "Method": "UpdateMe",
+    "RelativePath": "api/Users/me",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "BarnManagementAPI.Models.Dtos.UpdateUserRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "BarnManagementAPI.Controllers.WeatherForecastController",

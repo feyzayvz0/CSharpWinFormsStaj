@@ -1,0 +1,9 @@
+2025-08-13 12:46:20.934 +03:00 [INF] AnimalLifecycleService started. Tick=10s
+2025-08-13 12:47:47.617 +03:00 [INF] GetMine: total=0, returned=0, user=2, sold=false, farmId=2, type=Egg, page=1, size=50
+2025-08-13 12:48:03.017 +03:00 [INF] GetMine: total=2, returned=2, user=2, sold=true, farmId=2, type=Egg, page=1, size=50
+2025-08-13 12:49:25.754 +03:00 [INF] GetMine: total=0, returned=0, user=2, sold=false, farmId=2, type=Milk, page=1, size=50
+2025-08-13 12:49:40.685 +03:00 [WRN] Produce failed: animal not found or not owned. req.AnimalId=3, user=2
+2025-08-13 12:50:00.533 +03:00 [INF] SellAll: nothing to sell. farmId=2, user=2
+2025-08-13 13:47:17.075 +03:00 [INF] Animal died Id=1 Species=Chicken Age=365/365
+2025-08-13 13:47:17.079 +03:00 [INF] Animal died Id=2 Species=Chicken Age=365/365
+2025-08-13 20:31:10.908 +03:00 [INF] AnimalLifecycleService started. Tick=10s

@@ -104,5 +104,21 @@ namespace BarnManagementAPI.Controllers
             await _db.SaveChangesAsync(ct);
             return NoContent();
         }
+
+        // DELETE /api/farms/{id}
+        [HttpDelete("{id:int}")]
+        public async Task<IActionResult> Delete(int id, CancellationToken ct)
+        {
+            var userId = User.GetUserId();
+            if (userId is null) return Unauthorized();
+
+            var farm = await _db.Farms.Include(f => f.Animals).FirstOrDefaultAsync(f => f.Id == id && f.UserId == userId, ct);
+            if (farm is null) return NotFound();
+
+            // not: hayvan/ürün cascade kurallarına dikkat
+            _db.Farms.Remove(farm);
+            await _db.SaveChangesAsync(ct);
+            return NoContent();
+        }
     }
 }
