@@ -28,11 +28,10 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// JWT Ayarlarýný yükle
+
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("Jwt"));
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 
-// JWT Authentication yapýlandýrmasý
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -50,7 +49,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// Swagger + JWT Authorize ayarlarý
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -82,7 +80,6 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// Development ortamýnda Swagger aktif
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -91,7 +88,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// Sýra önemli: önce Authentication sonra Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -7,60 +7,80 @@
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\services\\animallifecycleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250813171703_CascadeAndPrecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BarnManagementAPI\\Migrations\\20250813171703_CascadeAndPrecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\dtos\\productdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\dtos\\productdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\cashcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\cashcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\dtos\\cashdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\dtos\\cashdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\animalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\animalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\dtos\\animaldtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\dtos\\animaldtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\migrations\\20250808075616_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\migrations\\20250808075616_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\farmscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\animalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\animalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\common\\claimsprincipalextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\common\\claimsprincipalextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250814195727_FinalizeCascadeAndPrecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BarnManagementAPI\\Migrations\\20250814195727_FinalizeCascadeAndPrecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\controllers\\cashcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\controllers\\cashcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\dtos\\farmdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,14 +95,6 @@
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250808075358_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BarnManagementAPI\\Migrations\\20250808075358_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -91,12 +103,8 @@
       "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\farm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\models\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\models\\animal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\migrations\\20250808075616_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\migrations\\20250808075616_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|c:\\users\\feyza\\source\\repos\\staj\\barnmanagementapi\\barnmanagementapi\\migrations\\20250813171703_cascadeandprecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA837F0D-0EE0-45D9-B959-36501F492794}|BarnManagementAPI\\BarnManagementAPI.csproj|solutionrelative:barnmanagementapi\\migrations\\20250813171703_cascadeandprecision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -106,8 +114,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Properties\\launchSettings.json",
+              "RelativeToolTip": "BarnManagementAPI\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-14T20:02:25.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductDtos.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAmwA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T19:41:51.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserDtos.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswA4AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T09:31:31.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Product.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\Product.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwA0AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:19:45.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\User.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwAwAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:19:06.714Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -116,7 +189,7 @@
               "RelativeDocumentMoniker": "BarnManagementAPI\\Services\\AnimalLifecycleService.cs",
               "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Services\\AnimalLifecycleService.cs",
               "RelativeToolTip": "BarnManagementAPI\\Services\\AnimalLifecycleService.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAmwCsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAmwCcAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T09:30:34.091Z",
               "EditorCaption": ""
@@ -124,19 +197,162 @@
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "UserDtos.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\UserDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Title": "CashDtos.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T09:31:31.499Z",
+              "WhenOpened": "2025-08-09T07:46:54.842Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
+              "Title": "AnimalDtos.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwAYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T19:54:31.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Program.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Program.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Program.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAmwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:22:14.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Animal.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Animal.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Animal.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Animal.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Models\\Animal.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T21:19:32.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20250808075616_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAlwAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T07:56:16.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAlwDkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T09:32:11.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAlwOwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T19:42:18.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FarmsController.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\FarmsController.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\FarmsController.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\FarmsController.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Controllers\\FarmsController.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAlwHUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T19:43:38.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AnimalsController.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\AnimalsController.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\AnimalsController.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\AnimalsController.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Controllers\\AnimalsController.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAlwFgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T19:55:06.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ClaimsPrincipalExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAlwAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T19:42:59.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20250814195727_FinalizeCascadeAndPrecision.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250814195727_FinalizeCascadeAndPrecision.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Migrations\\20250814195727_FinalizeCascadeAndPrecision.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250814195727_FinalizeCascadeAndPrecision.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Migrations\\20250814195727_FinalizeCascadeAndPrecision.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T19:57:27.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BarnManagementAPI\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "BarnManagementAPI\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wBAAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-08T07:47:07.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "20250813171703_CascadeAndPrecision.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250813171703_CascadeAndPrecision.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Migrations\\20250813171703_CascadeAndPrecision.cs",
@@ -144,113 +360,11 @@
               "RelativeToolTip": "BarnManagementAPI\\Migrations\\20250813171703_CascadeAndPrecision.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T17:17:03.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T17:17:03.806Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FarmsController.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\FarmsController.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\FarmsController.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\FarmsController.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Controllers\\FarmsController.cs",
-              "ViewState": "AgIAAHIAAAAAAAAAAAAQwHkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T19:43:38.446Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Program.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Program.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T21:22:14.95Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\ProductsController.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAAABcBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T19:42:18.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAwCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T07:47:07.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\UsersController.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T09:32:11.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AnimalDtos.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\AnimalDtos.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T19:54:31.435Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AnimalsController.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\AnimalsController.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\AnimalsController.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\AnimalsController.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Controllers\\AnimalsController.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAAwHwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T19:55:06.036Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CashDtos.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\CashDtos.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-09T07:46:54.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\appsettings.json",
               "RelativeDocumentMoniker": "BarnManagementAPI\\appsettings.json",
@@ -258,12 +372,11 @@
               "RelativeToolTip": "BarnManagementAPI\\appsettings.json",
               "ViewState": "AgIAAB8AAAAAAAAAAADwvysAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-08T07:49:29.317Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-08T07:49:29.317Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "CashController.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\CashController.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\CashController.cs",
@@ -275,31 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ProductDtos.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\Dtos\\ProductDtos.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAmwCAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T19:41:51.573Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ClaimsPrincipalExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Common\\ClaimsPrincipalExtensions.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAwBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T19:42:59.028Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "FarmDtos.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Dtos\\FarmDtos.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Dtos\\FarmDtos.cs",
@@ -311,7 +400,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Controllers\\AuthController.cs",
@@ -323,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "JwtTokenService.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Services\\JwtTokenService.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Services\\JwtTokenService.cs",
@@ -336,18 +425,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "20250808075616_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Migrations\\20250808075616_InitialCreate.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T07:56:16.504Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
               "Title": "20250808075358_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Migrations\\20250808075358_InitialCreate.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Migrations\\20250808075358_InitialCreate.cs",
@@ -358,43 +435,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Product.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\Product.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAowBQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T21:19:45.075Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "Animal.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Animal.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Animal.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Animal.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\Animal.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAIA9wA8AAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T21:19:32.217Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\User.cs",
-              "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\User.cs",
-              "RelativeToolTip": "BarnManagementAPI\\Models\\User.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA1wBIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T21:19:06.714Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "Farm.cs",
               "DocumentMoniker": "C:\\Users\\feyza\\source\\repos\\Staj\\BarnManagementAPI\\BarnManagementAPI\\Models\\Farm.cs",
               "RelativeDocumentMoniker": "BarnManagementAPI\\Models\\Farm.cs",

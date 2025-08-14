@@ -32,18 +32,18 @@ namespace BarnManagementAPI.Services
                     using var scope = _scopeFactory.CreateScope();
                     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-                    // 1 gün yaşlandır
+                   
                     var animals = await db.Animals.ToListAsync(stoppingToken);
                     foreach (var a in animals)
                     {
                         if (!a.IsAlive) continue;
-                        a.Age += 1; // 1 gün
+                        a.Age += 1; 
                         if (a.Age >= a.Lifespan)
                         {
-                            db.Animals.Remove(a); // lifespan dolunca kaldır
-                            // istersen kaldır: db.Animals.Remove(a);
-                            // ama şu an IsAlive=false kalsın
-                            _logger.LogInformation("Animal died Id={Id} Species={S} Age={Age}/{Life}",
+                           
+                            db.Animals.Remove(a); 
+                            _logger.LogInformation(
+                                "Animal removed (lifespan ended). Id={Id} Species={S} Age={Age}/{Life}",
                                 a.Id, a.Species, a.Age, a.Lifespan);
                         }
                     }

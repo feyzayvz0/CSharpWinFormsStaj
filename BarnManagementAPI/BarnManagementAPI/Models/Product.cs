@@ -11,7 +11,7 @@ namespace BarnManagementAPI.Models
         public string ProductType { get; set; } = null!;
         public int Quantity { get; set; }
 
-        [Precision(18, 2)] // veya: [Column(TypeName = "decimal(18,2)")]
+        [Precision(18, 2)] 
         public decimal SalePrice { get; set; }
 
         public bool IsSold { get; set; } = false;

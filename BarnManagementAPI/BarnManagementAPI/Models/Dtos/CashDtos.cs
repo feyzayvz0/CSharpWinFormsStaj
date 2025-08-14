@@ -2,7 +2,7 @@
 {
     public class AddCashRequest
     {
-        public int? FarmId { get; set; } // opsiyonel (sahiplik kontrolü için)
+        public int? FarmId { get; set; } 
         public decimal Amount { get; set; }
     }
 

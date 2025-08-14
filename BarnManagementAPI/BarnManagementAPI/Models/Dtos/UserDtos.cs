@@ -12,6 +12,6 @@
     {
         public string? Email { get; set; }
         public string? Username { get; set; }
-        public decimal? Balance { get; set; } // normalde admin izni gerektirir; burada opsiyonel
+        public decimal? Balance { get; set; } 
     }
 }

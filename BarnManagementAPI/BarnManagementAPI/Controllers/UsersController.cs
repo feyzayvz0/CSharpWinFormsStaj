@@ -55,7 +55,7 @@ namespace BarnManagementAPI.Controllers
                 u.Username = req.Username;
             }
 
-            if (req.Balance is decimal b && b >= 0) // güvenlik notu
+            if (req.Balance is decimal b && b >= 0)
                 u.Balance = b;
 
             await _db.SaveChangesAsync(ct);

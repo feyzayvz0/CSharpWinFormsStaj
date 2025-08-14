@@ -15,7 +15,7 @@ namespace BarnManagementAPI.Controllers
     {
         private readonly AppDbContext _db;
 
-        // Basit fiyat tablosu (ileride DB'ye alabiliriz)
+       
         private static readonly Dictionary<string, decimal> Prices = new(StringComparer.OrdinalIgnoreCase)
         {
             ["Chicken"] = 50m,
@@ -26,7 +26,7 @@ namespace BarnManagementAPI.Controllers
 
         public AnimalsController(AppDbContext db) => _db = db;
 
-        // POST: /api/animals/buy
+       
         [HttpPost("buy")]
         public async Task<IActionResult> Buy([FromBody] BuyAnimalRequest req, CancellationToken ct)
         {
@@ -54,7 +54,7 @@ namespace BarnManagementAPI.Controllers
                 Lifespan = req.Species.Equals("Chicken", StringComparison.OrdinalIgnoreCase) ? 365 :
                            req.Species.Equals("Sheep", StringComparison.OrdinalIgnoreCase) ? 730 :
                            req.Species.Equals("Goose", StringComparison.OrdinalIgnoreCase) ? 730 :
-                           1460, // Cow default
+                           1460, 
                 IsAlive = true,
                 NextProductionAt = null
             };
@@ -79,7 +79,7 @@ namespace BarnManagementAPI.Controllers
 
             if (animal is null) return NotFound("Animal not found or not yours.");
 
-            // Basit satış bedeli: alış fiyatının %60'ı varsayalım
+          
             var species = animal.Species;
             if (!Prices.TryGetValue(species, out var buyPrice)) buyPrice = 0m;
             var sellPrice = Math.Round(buyPrice * 0.6m, 2);
@@ -87,7 +87,6 @@ namespace BarnManagementAPI.Controllers
             var user = await _db.Users.FirstAsync(u => u.Id == userId, ct);
             user.Balance += sellPrice;
 
-            // Hayvanı öldü/satıldı kabul edelim (sistemden kaldırabilir veya flag atabiliriz)
             _db.Animals.Remove(animal);
             await _db.SaveChangesAsync(ct);
 

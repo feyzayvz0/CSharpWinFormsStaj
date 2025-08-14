@@ -10,7 +10,7 @@ namespace BarnManagementAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // tüm endpointler token ister
+    [Authorize] 
     public class FarmsController : ControllerBase
     {
         private readonly AppDbContext _db;
@@ -115,7 +115,7 @@ namespace BarnManagementAPI.Controllers
             var farm = await _db.Farms.Include(f => f.Animals).FirstOrDefaultAsync(f => f.Id == id && f.UserId == userId, ct);
             if (farm is null) return NotFound();
 
-            // not: hayvan/ürün cascade kurallarına dikkat
+           
             _db.Farms.Remove(farm);
             await _db.SaveChangesAsync(ct);
             return NoContent();

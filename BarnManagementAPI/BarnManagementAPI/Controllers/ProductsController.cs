@@ -5,7 +5,7 @@ using BarnManagementAPI.Models.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging; // ✨ ILogger
+using Microsoft.Extensions.Logging; 
 
 namespace BarnManagementAPI.Controllers
 {
@@ -15,15 +15,14 @@ namespace BarnManagementAPI.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly AppDbContext _db;
-        private readonly ILogger<ProductsController> _logger; // ✨ logger alanı
+        private readonly ILogger<ProductsController> _logger; 
 
-        public ProductsController(AppDbContext db, ILogger<ProductsController> logger) // ✨ ctor ile al
+        public ProductsController(AppDbContext db, ILogger<ProductsController> logger) 
         {
             _db = db;
             _logger = logger;
         }
 
-        // Basit üretim kuralları (ileride DB'ye alabiliriz)
         private static readonly Dictionary<string, (string productType, decimal unitPrice, TimeSpan cooldown)> Rules
             = new(StringComparer.OrdinalIgnoreCase)
             {
@@ -33,7 +32,7 @@ namespace BarnManagementAPI.Controllers
                 ["Goose"] = ("Feather", 8m, TimeSpan.FromDays(1))
             };
 
-        // POST /api/products/produce  => 1 adet ürün üret
+
         [HttpPost("produce")]
         public async Task<ActionResult<ProductResponse>> Produce([FromBody] ProduceRequest req, CancellationToken ct)
         {
@@ -62,7 +61,6 @@ namespace BarnManagementAPI.Controllers
                 return BadRequest("No production rule for this species.");
             }
 
-            // Cooldown kontrolü
             var now = DateTime.UtcNow;
             if (animal.NextProductionAt is DateTime next && now < next)
             {
@@ -71,7 +69,7 @@ namespace BarnManagementAPI.Controllers
                 return BadRequest($"Production not ready. Try after {next:O}");
             }
 
-            // Ürünü oluştur
+            
             var product = new Product
             {
                 AnimalId = animal.Id,
@@ -83,9 +81,8 @@ namespace BarnManagementAPI.Controllers
             };
             _db.Products.Add(product);
 
-            // TEST: bir sonraki üretim zamanı (5 sn). PROD'da rule.cooldown'a geri al.
-            animal.NextProductionAt = now.AddSeconds(5);
-
+           
+            animal.NextProductionAt = now.Add(rule.cooldown);
             await _db.SaveChangesAsync(ct);
 
             _logger.LogInformation("Product produced: productId={ProductId}, type={Type}, animalId={AnimalId}, user={UserId}",
@@ -103,7 +100,7 @@ namespace BarnManagementAPI.Controllers
             });
         }
 
-        // POST /api/products/sell  => tek ürünü sat
+        
         [HttpPost("sell")]
         public async Task<IActionResult> Sell([FromBody] SellProductRequest req, CancellationToken ct)
         {
@@ -130,7 +127,7 @@ namespace BarnManagementAPI.Controllers
 
             var total = product.SalePrice * product.Quantity;
 
-            // Bakiyeye ekle
+            
             var user = await _db.Users.FirstAsync(u => u.Id == userId, ct);
             user.Balance += total;
 
@@ -143,14 +140,14 @@ namespace BarnManagementAPI.Controllers
             return Ok(new { message = "Product sold.", received = total, newBalance = user.Balance });
         }
 
-        // POST /api/products/sell-all  => belirli çiftlikte (ve opsiyonel tipte) tüm satılmamış ürünleri sat
+        
         [HttpPost("sell-all")]
         public async Task<IActionResult> SellAll([FromBody] SellAllRequest req, CancellationToken ct)
         {
             var userId = User.GetUserId();
             if (userId is null) return Unauthorized();
 
-            // Kullanıcının çiftliği mi?
+           
             var owns = await _db.Farms.AnyAsync(f => f.Id == req.FarmId && f.UserId == userId, ct);
             if (!owns)
             {
@@ -237,7 +234,7 @@ namespace BarnManagementAPI.Controllers
             if (page <= 0) page = 1;
             if (pageSize <= 0 || pageSize > 200) pageSize = 50;
 
-            // Kullanıcının ürünleri
+           
             var query = _db.Products
                 .Include(p => p.Animal)
                 .ThenInclude(a => a.Farm)

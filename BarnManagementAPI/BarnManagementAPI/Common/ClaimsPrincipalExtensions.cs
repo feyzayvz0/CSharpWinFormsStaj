@@ -7,7 +7,7 @@ namespace BarnManagementAPI.Common
     {
         public static int? GetUserId(this ClaimsPrincipal user)
         {
-            // Token oluştururken "sub" claim'i koymuştuk
+            
             var sub = user.FindFirst(JwtRegisteredClaimNames.Sub)?.Value
                       ?? user.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 

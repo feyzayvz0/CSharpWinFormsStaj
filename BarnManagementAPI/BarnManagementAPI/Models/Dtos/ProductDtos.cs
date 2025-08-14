@@ -13,7 +13,7 @@
     public class SellAllRequest
     {
         public int FarmId { get; set; }
-        public string? ProductType { get; set; } // opsiyonel: sadece bir tipe göre sat
+        public string? ProductType { get; set; }
     }
 
     public class ProductResponse

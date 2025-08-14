@@ -1,0 +1,1 @@
+2025-08-14 22:03:25.220 +03:00 [INF] AnimalLifecycleService started. Tick=10s
